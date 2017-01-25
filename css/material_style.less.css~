@@ -1012,7 +1012,6 @@ img {
 								width: 1rem;
 								height: 1rem;
 								.border-radius;
-								.pref(pointer-events, none);
 								color: @bgColor;
 							}
 							&:before {
@@ -1036,123 +1035,123 @@ img {
 					}
 				}
 				/* Тело поста */
-				td:nth-child(2) {
-					.postcolor {
-						font-size: 1rem;
-						table[id*="ipb-attach"] * {
+			td:nth-child(2) {
+				.postcolor {
+					font-size: 1rem;
+					table[id*="ipb-attach"] * {
+						display: inline-block;
+						margin: 0;
+						padding: 0;
+						text-decoration: none;
+						.attach { margin-bottom: 0.2rem; }
+					}
+					img[src*="folder_mime_types"],
+					img[alt="Прикрепленный файл"] {
+						display: none;
+					}
+					a {
+						color: @linkColor;
+						text-decoration: none;
+						&[data-rel="lyteframe"],
+						&.sp_img {
 							display: inline-block;
-							margin: 0;
-							padding: 0;
-							text-decoration: none;
-							.attach { margin-bottom: 0.2rem; }
-						}
-						img[src*="folder_mime_types"],
-						img[alt="Прикрепленный файл"] {
-							display: none;
-						}
-						a {
-							color: @linkColor;
-							text-decoration: none;
-							&[data-rel="lyteframe"],
-							&.sp_img {
-								display: inline-block;
-								margin: 0.25rem 0;
-								&:before {
-									display: inline-block;
-									width: 1.5rem;
-									height: 1.5rem;
-									margin-right: 0.3rem;
-									content:'';
-									background-image: url(src/attach.svg);
-									background-repeat: no-repeat;
-									background-size: 1.5rem;
-									vertical-align: middle;
-								}
-							}
-						}
-						font {
-							font-size: 0.875rem !important;
-							> * {
-								opacity: 0.7 !important;
-							}
-							* {
-								font-size: inherit;
-								color: mix(@color, @bgColor, 70%);
-							}
-							a[title="Перейти к сообщению"] {
-								font-size: 0.625rem;
-							}
-							a[title="Ссылка"] {
-								color: @linkColor;
-							}
-						}
-						.edit{
-							display: block;
-							font-size: 0.875rem !important;
-							font-style: italic;
-							color: mix(@color, @bgColor, 50%);
-						}
-						.post-edit-reason {
-							display: inline-block;
-							font-size: 0.9375rem;
-							margin-top: 0.3rem;
-							font-weight: bold;
-							color: mix(@color, @bgColor, 50%);
-							text-align: left;
-						}
-						span[style="font-family:monospace"] {
-							font-family: 'roboto mono', monospace !important;
-							font-size: 1rem;
-						}
-						.post-block.code > .block-body {
+							margin: 0.25rem 0;
 							&:before {
+								display: inline-block;
+								width: 1.5rem;
+								height: 1.5rem;
+								margin-right: 0.3rem;
 								content:'';
+								background-image: url(src/attach.svg);
+								background-repeat: no-repeat;
+								background-size: 1.5rem;
+								vertical-align: middle;
 							}
-						}
-						.desc {
-							margin-left: 0.5rem;
-							font-size: 15*@rem;
-							.color(50%);
 						}
 					}
-					a[title="Перейти к сообщению"] {
-						position: relative;
+					font {
+						font-size: 0.875rem !important;
+						> * {
+							opacity: 0.7 !important;
+						}
+						* {
+							font-size: inherit;
+							color: mix(@color, @bgColor, 70%);
+						}
+						a[title="Перейти к сообщению"] {
+							font-size: 0.625rem;
+						}
+						a[title="Ссылка"] {
+							color: @linkColor;
+						}
+					}
+					.edit{
+						display: block;
+						font-size: 0.875rem !important;
+						font-style: italic;
+						color: mix(@color, @bgColor, 50%);
+					}
+					.post-edit-reason {
 						display: inline-block;
-						margin: 0 -0.1875rem 0 0;
-						top: 0.375rem;
-						width: 1.5rem;
-						height: 1.5rem;
-						img {
-							display: none;
-						}
+						font-size: 0.9375rem;
+						margin-top: 0.3rem;
+						font-weight: bold;
+						color: mix(@color, @bgColor, 50%);
+						text-align: left;
+					}
+					span[style="font-family:monospace"] {
+						font-family: 'roboto mono', monospace !important;
+						font-size: 1rem;
+					}
+					.post-block.code > .block-body {
 						&:before {
-							position: absolute;
-							content: '';
-							display: inline-block;
-							top: 0.25rem;
-							left: 0.25rem;
-							width: 1rem;
-							height: 1rem;
-							border-radius: 1rem;
-							background: @linkColor;
-							overflow: visible;
+							content:'';
 						}
-						&:after {
-							position: absolute;
-							display: inline-block;
-							box-sizing: border-box;
-							content: '';
-							top: 0.490625rem;
-							left: 0.5625rem;
-							width: 0.5rem;
-							height: 0.5rem;
-							border-top: 0.1875rem solid @bgColor;
-							border-left: 0.1875rem solid @bgColor;
-							-webkit-transform: rotate(-45deg);
-							transform: rotate(-45deg);
-						}
+					}
+					.desc {
+						margin-left: 0.5rem;
+						font-size: 15*@rem;
+						.color(50%);
 					}
 				}
+				a[title="Перейти к сообщению"] {
+					position: relative;
+					display: inline-block;
+					margin: 0 -0.1875rem 0 0;
+					top: 0.375rem;
+					width: 1.5rem;
+					height: 1.5rem;
+					img {
+						display: none;
+					}
+					&:before {
+						position: absolute;
+						content: '';
+						display: inline-block;
+						top: 0.25rem;
+						left: 0.25rem;
+						width: 1rem;
+						height: 1rem;
+						border-radius: 1rem;
+						background: @linkColor;
+						overflow: visible;
+					}
+					&:after {
+						position: absolute;
+						display: inline-block;
+						box-sizing: border-box;
+						content: '';
+						top: 0.490625rem;
+						left: 0.5625rem;
+						width: 0.5rem;
+						height: 0.5rem;
+						border-top: 0.1875rem solid @bgColor;
+						border-left: 0.1875rem solid @bgColor;
+						-webkit-transform: rotate(-45deg);
+						transform: rotate(-45deg);
+					}
+				}
+			}
 			}
 			td.catend {
 				display: none;
