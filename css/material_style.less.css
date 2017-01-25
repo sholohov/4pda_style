@@ -1,0 +1,986 @@
+/**
+ * MATERIAL STYLE
+ * Стиль для сайта 4PDA.RU
+ * Автор: Морфий
+*/
+
+//                                ---- COLOR ----
+
+//		@import 'css/material_light';
+		@import 'css/material_dark';
+//		@import 'css/material_black';
+
+@import 'css/property_helper';
+
+@width:					50em;
+@micro:					15em;
+@widthPoll:				30em;
+@rem:					0.0625rem;
+@em:					0.0625em;
+@codeLineHeight:		22*@rem;
+
+.color(@percent: 50%) {color: mix(@color,@bgColor,@percent);}
+
+HTML{
+	font-size: 1rem;
+	margin: 0;
+	padding: 0;
+	body{
+		position: relative;
+		font-family: 'Roboto';
+		margin: 0;
+		padding: 0;
+		font-size: 1em;
+		overflow-wrap: break-word;
+		word-break: break-word;
+		white-space: normal;
+		color: @color;
+		.pref(box-sizing, border-box);
+		background-color: @tmColor;
+		ul, ol {
+			padding-left: 1.5rem;
+		}
+		a {
+			cursor: pointer;
+			text-decoration: none !important;
+			color: @linkColor;
+		}
+	}
+}
+
+/*
+*	PICTURES SIZE
+*/
+
+
+img {
+	height: auto;
+	width: auto;
+	max-width: 100%;
+}
+
+/*
+*         FONT_SIZE
+*/
+
+@import 'css/font-size';
+
+/*
+*         POST_BLOCK
+*/
+
+.post-block {
+	display: block;
+	&.quote,
+	&.code,
+	&.hidden,
+	&.spoil {
+		display: block;
+		padding: 0.5rem 0.625rem;
+		margin: 0.5rem 0;
+		border: none;
+		background: none;
+		.border-radius;
+		> .block-title {
+			margin: 0;
+			padding: 0;
+			font-size: 1rem;
+			line-height: 1.4;
+			font-weight: bold;
+			font-style: italic;
+			border: none;
+			background: none;
+		}
+		> .block-body{
+			margin:0;
+			padding: 0;
+			margin-top: 0.5rem;
+			font-size: 1rem;
+			color: @color;
+			border: none;
+			background: none;
+		}
+	}
+	&.quote {
+		position: relative;
+		background: mix(@bg-quote, @bgColor, 40%);
+		>.block-title {
+			color: mix(@color, @linkColor, 8%);
+			&:empty {
+				margin-left: 0;
+				&:before {
+					content:'Цитата';
+				}
+			}
+			a[title="Перейти к сообщению"] {
+				float: left;
+				margin: -0.5rem 0.25rem 0 -0.25rem !important;
+				.pref(opacity, 0.8);
+				&:before {
+					background: mix(@color, @linkColor, 8%);
+				}
+			}
+			a[title="Ссылка "] {
+				margin: 0 0.5rem;
+				.pref(box-sizing, border-box);
+				color: @linkColor;
+				border-bottom: 1px solid mix(@linkColor, @bgColor, 50%);
+			}
+		}
+		>.block-body {
+			color: saturate(mix(@bg-quote, @color, 20%),50%);
+		}
+	}
+	&.code {
+		counter-reset: num-line;
+		position: relative;
+		padding: 0;
+		overflow: hidden;
+		background: mix(@bg-code, @bgColor, 40%);
+		>.block-title {
+			margin: 0 3rem 0 0;
+			padding: 0.5rem 0.5rem 0.75rem 0.625rem;
+			color: saturate(mix(@bg-code, @color, 50%),50%);
+			&:before {
+				content:'Код';
+			}
+		}
+		>.block-body {
+			font-family: 'Roboto Mono';
+			padding: 0;
+			margin: 0.5rem;
+			overflow-x: auto;
+			white-space: pre-wrap;
+			font-size: 1rem;
+			line-height: @codeLineHeight;
+			-webkit-tab-size: 4;
+			tab-size: 4;
+			color: saturate(mix(@bg-code, @color, 30%),100%);
+			background: linear-gradient(mix(mix(@bg-code, @bgColor, 40%),@color,97%) @codeLineHeight, transparent @codeLineHeight);
+			background-size: @codeLineHeight * 2 @codeLineHeight * 2;
+			br {
+				display: inline-block;
+				width: 1rem;
+				height: 1rem;
+				&:after {
+					display: inline-block;
+					width: 1rem;
+					height: 1rem;
+					counter-increment: num-line;
+					content: counter(num-line);
+					background: red;
+				}
+			}
+		}
+		&.box {
+			> .block-title {
+				&:after {
+					content:'' !important;
+				}
+				&:before {
+					content:'Развернуть Код' !important;
+				}
+			}
+			> .block-body {
+				max-height: 9.5rem;
+				overflow-y: hidden;
+			}
+		}
+		&.unbox {
+			> .block-title {
+				&:before {
+					content:'Свернуть Код' !important;
+				}
+			}
+		}
+	}
+	&.hidden {
+		background: @bg-hidden;
+		>.block-title{
+			color: mix(@color, @bg-hidden, 70%);
+			&:before{
+				content:'Скрытый текст: ';
+			}
+			&:empty:before{
+				content:'Скрытый текст';
+			}
+		}
+		>.block-body {
+			a { color: @linkColor; }
+		}
+	}
+	&.spoil {
+		position: relative;
+		padding: 0;
+		overflow: hidden;
+		.pref(box-sizing, border-box);
+		font-size: 1rem;
+		background: @spoilBgColor;
+		> a {
+			display: inline-block !important;
+			margin: 6*@rem 0 !important;
+			height: 1rem;
+			width: 1.5rem;
+		}
+		.spoil {
+			margin: 0.5rem -0.375rem;
+		}
+		&:before {
+			position: absolute;
+			left: 0.625rem;
+			top: 12*@rem;
+			font-size: 1em;
+			content:'';
+			height: 0.625em;
+			width: 0.625em;
+			margin: 0 0.75rem 0 0.25rem;
+			.pref(box-sizing, border-box);
+			border-top: 0.125em solid;
+			border-left: 0.125em solid;
+			.pref(transition, 0.3s ease);
+		}
+		>.block-title {
+			padding: 6*@rem 2.25rem + 0.125;
+			font-style: normal;
+			min-height: 1.25rem;
+			color: white;
+			font-size: 1rem;
+			overflow: hidden;
+			&:before,
+			&:after {
+				content:'' !important;
+			}
+			&.empty:before,
+			&:empty:before {
+				position: relative;
+				display: inline;
+				content:'Спойлер' !important;
+			}
+			* {
+				color: inherit !important;
+				font-size: 1rem !important;
+				line-height: 1.4 !important;
+				font-style: normal !important;
+			}
+		} 
+		>.block-body {
+			padding: 0.75rem;
+			margin: 0;
+			.pref(box-sizing, border-box);
+		}
+		&.close {
+			background: @spoilColor;
+			> a {
+				color: White;
+			}
+			&:before {
+				.pref(transform, rotate(-135deg) translate(0.125rem, 0.125rem));
+				border-top-color: white;
+				border-left-color: white;
+			}
+			> .block-title {
+//				background: @spoilColor;
+			}
+			> .block-body {
+				display: none;
+			}
+		}
+		&.open {
+			> a {
+				.color(40%);
+			}
+			&:before {
+				.pref(transform, rotate(45deg) translate(0.125rem, 0.125rem));
+				border-top-color: mix(@color, @bgColor, 60%);
+				border-left-color: mix(@color, @bgColor, 60%);
+			}
+			.open {
+				background: @bgColor;
+				.open {
+					background: @spoilBgColor;
+					.open {
+						background: @bgColor;
+						.open {
+							background: @spoilBgColor;
+							.open {
+								background: @bgColor;
+								.open {
+									background: @spoilBgColor;
+									.open {
+										background: @bgColor;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			> .block-title {
+				color: mix(@color, @bgColor, 60%);
+				margin: 0;
+			}
+		}
+	}
+}
+
+/*
+*	ADM TAGS
+*/
+
+.post-block {
+	&.cur {
+		 > .block-title {background: rgb(0,150,0);}
+		 > .block-body {background: rgba(0,150,0,0.07);}
+	}
+	&.mod {
+		> .block-title {background: rgb(0,150,225);}
+		> .block-body {background: rgba(0,150,225,0.07);}
+	}
+	&.ex {
+		 > .block-title {background: rgb(225,70,40);}
+		 > .block-body {background: rgba(225,70,40,0.07);}
+	}
+	&.cur, &.mod, &.ex{
+		margin: 1rem 0;
+		display: table;
+		width: 100%;
+		min-height: 5rem;
+		overflow: hidden;
+		.border-radius;
+		background: @bgColor;
+		> .block-title{
+			display: table-cell;
+			vertical-align: middle;
+			color: @bgColor;
+			width: 4rem;
+			text-align: center;
+			height: 100%;
+			font-size: 3rem;
+			.border-radius(0);
+		}
+		> .block-body{
+			display: table-cell;
+			vertical-align: middle;
+			text-align: left;
+			padding: 0.5rem;
+			height: 100%;
+			margin: 0;
+		}
+	}
+}
+
+#ipbwrapper {
+	margin: 8rem 0.5rem 0;
+	padding: 0;
+	width: auto !important;
+	font-size: 1rem;
+	/* убрать рекламу и логотип форума */
+	> div table tr[valign="top"] {
+		display: none !important;
+	}
+	/* меню поиска */
+	#submenu {
+		margin: 0;
+		.ipb-top-right-link {
+			a {
+				padding: 0.5rem 0.75rem;
+				font-size: 1rem;
+				font-weight: bold;
+				.color(50%);
+			}
+		}
+		.popupmenu-new {
+			padding: 0;
+			.border-radius;
+			font-size: 1rem;
+			border: none;
+			background: @bgColor;
+			.boxShadow(3);
+			form {
+				display: block;
+				position: relative;
+				margin: 1rem;
+				color: @color;
+//				br { display: none }
+				input[type="text"] {
+					width: 14rem;
+					margin-bottom: 1.5rem;
+					padding: 0.25rem 0;
+					font-size: 1rem;
+					color: @color;
+					.pref(box-sizing, border-box);
+					outline: none;
+					border: none;
+					border-bottom: 2px solid mix(@color, @bgColor, 20%);
+					background: @bgColor;
+					&:focus {
+						border-bottom: 2px solid @linkColor;
+					}
+				}
+				.button {
+					display: inline-block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 2.5rem;
+					heigth: 2.5rem;
+					overflow: hidden;
+				}
+				input[type="checkbox"] {
+					width: 1rem;
+					height: 1rem;
+				}
+				label {
+					display: block;
+					margin-top: 0.5rem;
+				}
+			}
+			div[style="padding:4px"] {
+				margin: 1rem;
+				text-align: center;
+				a {
+					padding: 0.5rem;
+					font-size: 1rem;
+					font-weight: bold;
+					text-decoration: none;
+					text-transform: uppercase;
+					color: @linkColor;
+				}
+			}
+		}
+	}
+	/* ник и выход */
+	.user_home {
+		color: transparent;
+		margin: 0;
+		a {
+			font-size: 1rem;
+		}
+		b {
+			a {
+				margin-left: -5.5rem;
+				padding: 0.5rem 0.75rem;
+				font-weight: bold;
+				.color(50%);
+				&:before {
+					content:'';
+					display: inline-block;
+					width: 1em;
+					height: 1em;
+					margin: 0 1rem -0.125em 0;
+					background: url(src/person.svg) center no-repeat;
+					background-size: 1.5em;
+				}
+			}
+		}
+		> a {
+			padding: 0.5rem 0.75rem;
+			font-weight: bold;
+			color: @linkColor;
+		}
+	}
+	#userlinks {
+		margin: 0.5rem 0;
+		padding: 0;
+		.border-radius;
+		border: none;
+		background: @spoilColor;
+		a {
+			font-size: 1rem;
+		}
+		/* Cсылки на форумы */
+		.home {
+			a {
+				color: white;
+				i:before {
+					display: inline-block;
+					width: 1.5em;
+					height: 1.5em;
+					font-size: 1em;
+					color: rgba(255,255,255,0.75);
+				}
+			}
+		}
+		/* Упоменания, Сообщения, Избранное(\d*), Меню пользователя*/
+		p:not(.home) {
+			padding-right: 0.5rem;
+			color: transparent;
+			a {
+				padding: 0.25rem 0;
+				font-weight: bold;
+				color: white;
+			}
+			#post-member-usercp {
+				padding: 0.25rem 0;
+				overflow: hidden;
+				font-size: 1rem;
+				font-weight: bold;
+				color: white;
+				outline: none;
+				border: none;
+				background: none;
+				&:after {
+					content:'';
+					display: inline-block;
+					width: 1em;
+					height: 1em;
+					margin: 0 0 -0.125em 0.5rem;
+					opacity: 0.5;
+					background: url(src/down_white.png) center no-repeat;
+					background-size: 1.5em;
+				}
+			}
+		}
+	}
+	.popupmenu-new,
+	.popupmenu {
+		.border-radius;
+		border: none;
+		outline: none;
+		background: @bgColor;
+		.boxShadow(3);
+		DIV[class*="popupmenu-item"] {
+			border: none;
+			img {
+				display: none;
+			}
+			a {
+				display: block;
+				padding: 0.5rem;
+				font-size: 1rem;
+				color: @color;
+			}
+		}
+		&#ipb-tl-search_menu {
+			width: 20rem !important;
+			left: auto !important;
+			right: 0.5rem;
+		}
+		&#post-member-usercp_menu {
+			width: 10rem !important;
+			left: auto !important;
+			right: 0.5rem;
+		}
+		&[id*="post-member"] {
+			width: 20rem !important;
+		}
+		&#topicmenu-options {
+			width: 10rem !important;
+			left: auto !important;
+			right: 0.5rem;
+		}
+	}
+	/* уведомление QMS */
+	#events-wrapper {
+//		display: block !important;
+	}
+	/* Ссылки на родительские форумы */
+	#navstrip {
+		margin: 1rem 0;
+		padding: 0;
+		font-size: 1rem;
+		font-weight: normal;
+		.color(50%);
+		img {
+			display: none;
+		}
+		a {
+			padding: 0.5rem;
+			font-weight: bold;
+			.color(50%);
+		}
+	}
+	> .ipbtable {
+		margin: 0;
+		padding: 0;
+		/* пагинация */
+		.pagelink,
+		.pagelinklast,
+		.pagecurrent {
+			padding: 0;
+			margin: 0;
+			vertical-align: middle;
+			font-size: 1rem;
+			font-weight: bold;
+			border: none;
+			background: none;
+			a {
+				padding: 0.5rem;
+				.color(50%);
+			}
+			a[title="На первую страницу"]
+			a[title="Предыдущая страница"],
+			a[title="Следующая страница"],
+			a[title="На последнюю страницу"] {
+				
+			}
+			a[title="Предыдущая страница"] {
+				
+			}
+			a[title="Следующая страница"] {
+				
+			}
+			a[title="На первую страницу"],
+			a[title="На последнюю страницу"] {
+				color: transparent;
+				&:before {
+					content:"";
+					display: inline-block;
+					margin-right: -0.5rem;
+					.color(50%);
+				}
+			}
+			a[title="На первую страницу"] {
+				&:before {
+					content:"<<";
+				}
+			}
+			a[title="На последнюю страницу"] {
+				&:before {
+					content:">>";
+				}
+			}
+		}
+		span[id*="page-jump"] {
+			padding: 0.25rem 0.75rem;
+			font-weight: bold;
+			.color(50%) !important;
+			img {
+				display: none;
+			}
+			&:after {
+				content:'';
+				display: inline-block;
+				width: 1em;
+				height: 1em;
+				margin: 0 0 -0.125em 0.5rem;
+				background: url(src/down.png) center no-repeat;
+				background-size: 1.5em;
+			}
+		}
+		.pagecurrent {
+			margin: 0 0.25rem;
+			padding: 0.25rem 0.75rem;
+			.border-radius;
+			color: white;
+			background: @linkColor;
+		}
+		.pagelinklast {
+			
+		}
+		/* меню выбора страницы */
+		.popupmenu {
+			.popupmenu-category {
+				font-size: 1rem;
+				padding: 0.75rem;
+				border: none;
+				background: none;
+			}
+			input[type="text"] {
+				width: 8rem;
+				margin-bottom: 1.5rem;
+				padding: 0.25rem 0;
+				font-size: 1rem;
+				color: @color;
+				.pref(box-sizing, border-box);
+				outline: none;
+				border: none;
+				border-bottom: 2px solid mix(@color, @bgColor, 20%);
+				background: @bgColor;
+				&:focus {
+					border-bottom: 2px solid @linkColor;
+				}
+			}
+		}
+		/* ответить и поиск по теме */
+		.nopad {
+			form {
+//				float: right;
+				color: @color;
+				input[type="text"] {
+					padding: 0.25rem 0;
+					font-size: 1rem;
+					color: @color;
+					.pref(box-sizing, border-box);
+					outline: none;
+					border: none;
+					border-bottom: 2px solid mix(@color, @bgColor, 20%);
+					background: transparent;
+					&:focus {
+						border-bottom: 2px solid @linkColor;
+					}
+				}
+				.button {
+					display: inline-block;
+					font-size: 1rem;
+					font-weight: bold;
+					text-transform: uppercase;
+					color: @linkColor;
+					border: none;
+					background: none;
+				}
+			}
+			a[href*="reply"] {
+				display: inline-block;
+				vertical-align: middle;
+				img { display: none;}
+				&:before {
+					display: inline-block;
+					content:'Ответить';
+					margin: 0.125rem 0.5rem;
+					padding: 0.5rem;
+					.border-radius;
+					font-size: 1rem;
+					font-weight: bold;
+					color: white;
+					background: @spoilColor;
+				}
+			}
+		}
+	}
+	/* Список сообщени */
+	> .borderwrap {
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: none;
+		/* название темы */
+		.maintitle {
+			padding: 0.25rem 0 !important;
+			.border-radius;
+			border: none;
+			background: @spoilColor;
+			tr {
+				td:nth-child(1) {
+					padding: 0.25rem;
+					font-size: 1rem;
+					img {display: none;}
+				}
+				td:nth-child(2) {}
+				td:nth-child(3) {
+					.popmenubutton {
+						text-align: right;
+						height: 1.4rem;
+						border: none;
+						background: none;
+						a {
+							padding: 0 0.5rem !important;
+							color: white;
+							font-size: 1rem;
+							&:after {
+								content:'';
+								display: inline-block;
+								width: 1em;
+								height: 1em;
+								margin: 0 0 -0.125em 0.5rem;
+								background: url(src/down_white.png) center no-repeat;
+								background-size: 1.5em;
+							}
+						}
+					}
+					img { display: none;}
+				}
+			}
+		}
+		/* Опрос */
+		FORM[action*="poll"] {
+			> TABLE.ipbtable {
+				display: table-block;
+				font-size: 1rem;
+				margin: 0.5rem 0;
+				.border-radius;
+				background: @bgColor;
+				.boxShadow(1);
+				tr, td, .borderwrap {
+					border: none;
+					background: none;
+				}
+				tr:nth-child(1) {
+					th {
+						padding: 1rem;
+						font-size: 1.25rem;
+						color: @color;
+						border: none;
+						background: none;
+					}
+				}
+				tr:nth-child(2) {
+					td {
+						font-size: 1rem;
+						color: @color;
+						> .borderwrap {
+							margin: 0.5rem;
+							> div {
+								border: none;
+								background: none;
+								span {
+									font-size: 1rem;
+								}
+							}
+							> .ipbtable {
+								b {
+									font-weight: normal
+								}
+							}
+						}
+					}
+				}
+				tr {
+					TD.row1[colspan="3"][align="center"] {
+						font-size: 1rem;
+						.color(50%);
+					}
+					TD.formbuttonrow {
+						background: none !important;
+						.button {
+							padding: 0.5rem;
+							font-size: 1rem;
+							color: @linkColor;
+							font-weight: bold;
+							text-transform: uppercase;
+							border: none;
+							outline: none;
+							background: none;
+						}
+					}
+					td.catend {
+						display: none;
+					}
+				}
+			}
+		}
+		/* Пост */
+		TABLE.ipbtable[data-post] {
+			margin: 0.5rem 0;
+			.border-radius;
+			color: @color;
+			background: @bgColor;
+			.boxShadow(1);
+			tr, td {
+				border: none;
+				background: none !important;
+			}
+			tr:nth-child(1) {
+				td {
+					min-width: 10rem !important;
+					padding: 0;
+					.color(50%);
+				}
+				/* Ник и меню пользователя */
+				td:nth-child(1) {
+					.popmenubutton-new,
+					.popmenubutton-new-out {
+						margin: auto;
+						padding: 0;
+						border: none;
+						background: none;
+						.normalname {
+							display: inline-block;
+							a {
+								display: inline-block;
+								text-align: center;
+								padding: 0.5rem;
+								font-size: 1rem;
+								color: @color;
+							}
+						}
+					}
+				}
+				/* дата и ссылка на сообщение */
+				td:nth-child(2) {
+					font-size: 0.75rem;
+					img {display:none;}
+					div {
+						a {
+							padding: 0.5rem;
+							font-size: 0.75rem;
+							color: @linkColor;
+							font-weight: bold;
+						}
+					}
+				}
+			}
+			/* Информация о пользователе */
+			tr:nth-child(2) {
+				td:nth-child(1) {}
+				.postdetails {
+					center {
+						position: relative;
+						font-size: 0.75rem;
+						line-height: 1.4;
+						.color(50%);
+						&:before {
+							content:'Empty';
+							display: inline-block;
+							.border-radius(4rem);
+							width: 4rem;
+							height: 4rem;
+							line-height: 4rem;
+							font-weight: bold;
+							background: @borderColor;
+						}
+						.user-avatar {
+							position: absolute;
+							top: 0;
+							left: 0;
+							right: 0;
+							display: block;
+							margin: auto;
+							.border-radius;
+							overflow: hidden !important;
+							.border-radius(4rem);
+							width: 4rem;
+							height: 4rem;
+							background: @bgColor;
+							img {
+								display: inline-block;
+								max-width: 4rem;
+								max-height: 4rem;
+							}
+						}
+						.mem-title {
+							margin: auto;
+						}
+						IMG[alt="*"] {
+							display: inline-block;
+							.border-radius(1px);
+							margin: 0 1px 0 0;
+							height:0;
+							width:0;
+							border: 0.25rem solid mix(@linkColor,@bgColor,50%);
+							&:last-child {
+								margin: 0;
+							}
+						}
+						font {
+							display: inline-block;
+							position: absolute;
+							top: 2.75rem;
+							.border-radius(0.75rem);
+							width: 0.75rem;
+							height: 0.75rem;
+							margin-left: 1.25rem;
+							overflow: hidden;
+							color: transparent;
+							border: 0.125rem solid @bgColor;
+							&[color="green"] {
+								background: #259b24;
+							}
+							&[color="red"] {
+								background: #ff5722;
+							}
+						}
+					}
+				}
+			}
+			td.catend {
+				display: none;
+			}
+		}
+	}
+}
+
+/*
+*	PANEL
+*/
+
