@@ -1389,6 +1389,11 @@ img {
 			}
 		}
 	}
+	.copyright {
+		font-size: 0.75rem;
+		.color(50%);
+		background: transparent;
+	}
 }
 
 /*
