@@ -6,8 +6,8 @@
 
 //                                ---- COLOR ----
 
-//		@import 'css/material_light';
-		@import 'css/material_dark';
+		@import 'css/material_light';
+//		@import 'css/material_dark';
 //		@import 'css/material_black';
 
 @import 'css/property_helper';
@@ -707,50 +707,61 @@ img {
 				background: none;
 			}
 		}
-		/* ответить и поиск по теме */
-		.nopad {
-			form {
-//				float: right;
-				color: @color;
-				input[type="text"] {
-					padding: 0.25rem 0;
-					font-size: 1rem;
+	}
+	
+	/* ответить и поиск по теме */
+	.nopad,
+	.barc {
+		form {
+//			float: right;
+			color: @color;
+			input[type="text"] {
+				padding: 0.25rem;
+				font-size: 1rem;
+				.color(25%);
+				.pref(box-sizing, border-box);
+				outline: none;
+				border: none;
+				border-bottom: 2px solid mix(@color, @bgColor, 20%);
+				background: transparent;
+				&:focus {
 					color: @color;
-					.pref(box-sizing, border-box);
-					outline: none;
-					border: none;
-					border-bottom: 2px solid mix(@color, @bgColor, 20%);
-					background: transparent;
-					&:focus {
-						border-bottom: 2px solid @linkColor;
-					}
-				}
-				.button {
-					display: inline-block;
-					font-size: 1rem;
-					font-weight: bold;
-					text-transform: uppercase;
-					color: @linkColor;
-					border: none;
-					background: none;
+					border-bottom: 2px solid @linkColor;
 				}
 			}
-			a[href*="reply"] {
+		}
+		.button {
+			display: inline-block;
+			font-size: 1rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: @linkColor;
+			border: none;
+			background: none;
+		}
+		a[href*="reply"],
+		a[href*="javascript:ShowHide"]{
+			display: inline-block;
+			margin: 0 0.5rem 0 0;
+			padding: 0;
+			vertical-align: middle;
+			img { display: none;}
+			&:before {
 				display: inline-block;
-				vertical-align: middle;
-				img { display: none;}
-				&:before {
-					display: inline-block;
-					content:'Ответить';
-					margin: 0.125rem 0.5rem;
-					padding: 0.5rem;
-					.border-radius;
-					font-size: 1rem;
-					font-weight: bold;
-					color: white;
-					background: @spoilColor;
-				}
+				content:'';
+				padding: 0.5rem;
+				.border-radius;
+				font-size: 1rem;
+				font-weight: bold;
+				color: white;
+				background: @spoilColor;
 			}
+		}
+		a[href*="javascript:ShowHide"]:before {
+			content:'Быстрый ответ';
+		}
+		a[href*="reply"]:before {
+			content:'Ответ';
 		}
 	}
 	/* Список сообщени */
@@ -863,6 +874,90 @@ img {
 					}
 				}
 			}
+			b {
+				position: relative;
+			}
+			input[type="radio"],
+			input[type="checkbox"] {
+				display: inline-block;
+				with: 1rem;
+				height: 1rem;
+				margin-right: 0.75rem;
+				.opacity(0);
+				+ b:before {
+					.pref(pointer-events, none);
+					position: absolute;
+					left: -2rem;
+					top: 0.0625rem;
+					content:'';
+					display: inline-block;
+					height: 1rem;
+					width: 1rem;
+					vertical-align: middle;
+					overflow: hidden;
+					border: 0.125rem solid mix(@color, @bgColor, 50%);
+//					background: @bgColor;
+				}
+				+ b:after {
+					.pref(pointer-events, none);
+					position: absolute;
+					left: -1.875rem;
+					top: 0.1875rem;
+				}
+			}
+			input[type="radio"] {
+				+ b {
+					transition: transform 0.3s;
+					&:before {
+						border-radius: 1rem;
+					}
+					&:after {
+						position: absolute;
+						content:'';
+						display: inline-block;
+						height: 1rem;
+						width: 1rem;
+						border-radius: 100%;
+						background: @linkColor;
+						.transform(scale(0,0));
+					}
+				}
+				&:checked + b {
+					&:before {
+						border-color: @linkColor;
+					}
+					&:after {
+						.transform(scale(0.65,0.65));
+					}
+				}
+			}
+			input[type="checkbox"] {
+				+ b {
+					transition: transform 0.3s;
+					&:before {
+						.border-radius;
+					}
+					&:after {
+						content:'';
+						position: absolute;
+						display: inline-block;
+						height: 12*@rem;
+						width: 6*@rem;
+						border-bottom: 2.5*@rem solid @bgColor;
+						border-right: 2.5*@rem solid @bgColor;
+						.transform(rotate(45deg) translate((2*@rem), -(3*@rem)) scale(0,0));
+					}
+				}
+				&:checked + b {
+					&:before {
+						background: @linkColor;
+						border-color: @linkColor;
+					}
+					&:after {
+						.transform(rotate(45deg) translate((2*@rem), -(3*@rem)) scale(1,1));
+					}
+				}
+			}
 		}
 		/* Пост */
 		TABLE.ipbtable[data-post] {
@@ -877,7 +972,7 @@ img {
 			}
 			tr:nth-child(1) {
 				td {
-					min-width: 10rem !important;
+					min-width: 13rem !important;
 					padding: 0;
 					.color(50%);
 				}
@@ -895,7 +990,7 @@ img {
 								display: inline-block;
 								text-align: center;
 								padding: 0.5rem;
-								font-size: 1rem;
+								font-size: 18*@rem;
 								color: @color;
 							}
 						}
@@ -903,11 +998,12 @@ img {
 				}
 				/* дата и ссылка на сообщение */
 				td:nth-child(2) {
+					padding: 0 0.5rem;
 					font-size: 0.75rem;
 					img {display:none;}
 					div {
 						a {
-							padding: 0.5rem;
+							padding: 0.5rem 0;
 							font-size: 0.75rem;
 							color: @linkColor;
 							font-weight: bold;
@@ -925,14 +1021,16 @@ img {
 						line-height: 1.4;
 						.color(50%);
 						&:before {
-							content:'Empty';
+							content:'';
 							display: inline-block;
 							.border-radius(4rem);
 							width: 4rem;
 							height: 4rem;
+							font-size: 1rem;
 							line-height: 4rem;
 							font-weight: bold;
-							background: @borderColor;
+							background: @borderColor url(src/person.svg) center no-repeat;
+							background-size: 3em;
 						}
 						.user-avatar {
 							position: absolute;
@@ -974,7 +1072,7 @@ img {
 							.border-radius(0.75rem);
 							width: 0.75rem;
 							height: 0.75rem;
-							margin-left: 1.25rem;
+							margin-left: 1.125rem;
 							overflow: hidden;
 							color: transparent;
 							border: 0.125rem solid @bgColor;
@@ -983,6 +1081,9 @@ img {
 							}
 							&[color="red"] {
 								background: #ff5722;
+							}
+							+ br {
+								display: none;
 							}
 						}
 						/* модель устройства */
@@ -1011,6 +1112,7 @@ img {
 								font-weight: bold;
 								width: 1rem;
 								height: 1rem;
+								.opacity(0.7);
 								.border-radius;
 								.pref(pointer-events, none);
 								color: @bgColor;
@@ -1038,7 +1140,9 @@ img {
 				/* Тело поста */
 				td:nth-child(2) {
 					.postcolor {
+						padding: 0.5rem;
 						font-size: 1rem;
+						color: @color;
 						table[id*="ipb-attach"] * {
 							display: inline-block;
 							margin: 0;
@@ -1152,10 +1256,136 @@ img {
 							transform: rotate(-45deg);
 						}
 					}
+					> div {
+						color: transparent;
+						> br {
+							display: none;
+						}
+					}
+					.signature {
+						.opacity(0.75);
+						margin: 0 0.5rem;
+						padding: 0.5rem 0;
+						font-size: 0.75rem;
+						border-top: 1px solid @borderColor;;
+					}
+				}
+			}
+			/* футер поста */
+			tr:nth-child(3) {
+				td {
+					div {
+						> span {
+							margin-top: 2*@rem !important;
+						}
+						> span a,
+						> a:before {
+							padding: 0.25rem;
+							margin: 0 0.25rem;
+							display: inline-block;
+							font-size: 13*@rem;
+							font-weight: bold;
+							text-transform: uppercase;
+							.color(50%);
+						}
+						> a img {
+							display: none;
+						}
+					}
+				}
+				td:nth-child(1) {
+					div {
+						A[href*="devfaq"] {
+							margin-top: -3*@rem;
+						}
+						A[href="javascript:scroll(0,0);"]:before {
+							content:'Вверх';
+						}
+						A[href*="report"]:before {
+							content:'Жалоба';
+						}
+					}
+				}
+				td:nth-child(2) {
+					DIV[style="float: left;"] {
+						a[href*="javascript:ins"]:before {
+							content:'Ник';
+						}
+						a[href="javascript:pasteQ();"]:before {
+							content:'Цитировать';
+						}
+					}
+					DIV[id*="ka_"] {
+						.color(50%);
+						span {
+							margin: 0 0.25rem;
+							display: inline-block;
+							font-size: 14*@rem;
+							.color(50%) !important;
+						}
+						A[onclick*=",-1);"]:before {
+							content:'Плохо';
+							.opacity(0.7);
+							color: #ff5722;
+						}
+						A[onclick*=",1);"]:before {
+							content:'Хорошо';
+							.opacity(0.7);
+							color: #259b24;
+						}
+					}
+					DIV[align="right"] {
+						a[id*="edit"]:before {
+							content:'Изменить';
+						}
+						A[title="Удалить пост"]:before {
+							content:'Удалить';
+						}
+					}
 				}
 			}
 			td.catend {
 				display: none;
+			}
+		}
+		/* Подвал страницы */
+		.barc {
+			border: none;
+			background: none;
+			DIV[style*="float: right"] {
+				a {
+					.color(50%);
+				}
+			}
+		}
+		.formsubtitle {
+			margin: 1rem 0.25rem 0;
+			padding: 0 !important;
+			font-style: italic;
+			.color(50%);
+			background: none;
+			+ DIV.row1 {
+				font-style: italic;
+				.color(50%);
+				background: none;
+			}
+		}
+	}
+	#gfooter {
+		padding: 0 0.5rem;
+		background: none;
+		tbody {
+			display: table-block;
+			.border-radius;
+			background: @spoilColor;
+			TD[width="25%"] {
+				padding: 0 0.5rem !important;
+				font-size: 0.75rem;
+				font-style: italic;
+			}
+			a {
+				padding: 0 0.5rem !important;
+				font-size: 1rem;
 			}
 		}
 	}
