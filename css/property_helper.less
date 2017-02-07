@@ -468,3 +468,15 @@
 		.pref(box-shadow, ~'0 19px 38px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.2)');
 	}
 }
+
+.iconStyle(@imgUrl, @imgSize: 1.5em) {
+	& when (@imgUrl = '') { display: none; }
+	& when not (@imgUrl = '') { display: inline-block; }
+	content:'';
+	width: @imgSize;
+	height: @imgSize;
+	line-height: @imgSize;
+	vertical-align: center;
+	background: url(@imgUrl) center no-repeat;
+	background-size: @imgSize;
+}

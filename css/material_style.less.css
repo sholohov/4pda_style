@@ -27,7 +27,7 @@ HTML{
 	padding: 0;
 	body{
 		position: relative;
-		font-family: 'Roboto';
+		font-family: Arial, 'Roboto';
 		margin: 0;
 		padding: 0;
 		font-size: 1em;
@@ -142,7 +142,7 @@ img {
 		overflow: hidden;
 		background: mix(@bg-code, @bgColor, 40%);
 		>.block-title {
-			margin: 0 3rem 0 0;
+			margin: 0;
 			padding: 0.5rem 0.5rem 0.5rem 0.625rem;
 			color: saturate(mix(@bg-code, @color, 50%),50%);
 			&:before {
@@ -156,7 +156,7 @@ img {
 			overflow-x: auto;
 			white-space: pre-wrap;
 			font-size: 1rem;
-			line-height: @codeLineHeight;
+			line-height: @codeLineHeight !important;
 			-webkit-tab-size: 4;
 			tab-size: 4;
 			color: saturate(mix(@bg-code, @color, 30%),100%);
@@ -222,12 +222,15 @@ img {
 		background: @spoilBgColor;
 		> a {
 			display: inline-block !important;
-			margin: 6*@rem 0 !important;
+			margin: 4*@rem 0 !important;
 			height: 1rem;
 			width: 1.5rem;
 		}
 		.spoil {
-			margin: 0.5rem -0.375rem;
+			margin: 0.5rem 0 0.5rem;
+			.block-body {
+				margin-right: 0;
+			}
 		}
 		&:before {
 			position: absolute;
@@ -247,7 +250,7 @@ img {
 			padding: 6*@rem 2.25rem + 0.125;
 			font-style: normal;
 			min-height: 1.25rem;
-			color: white;
+			color: white !important;
 			font-size: 1rem;
 			overflow: hidden;
 			&:before,
@@ -275,7 +278,7 @@ img {
 		&.close {
 			background: @spoilColor;
 			> a {
-				color: White;
+				color: White !important;
 			}
 			&:before {
 				.pref(transform, rotate(-135deg) translate(0.125rem, 0.125rem));
@@ -320,7 +323,7 @@ img {
 				}
 			}
 			> .block-title {
-				color: mix(@color, @bgColor, 60%);
+				color: mix(@color, @bgColor, 60%) !important;
 				margin: 0;
 			}
 		}
@@ -365,6 +368,7 @@ img {
 		> .block-body{
 			display: table-cell;
 			vertical-align: middle;
+			font-size: 1rem;
 			text-align: left;
 			padding: 0.5rem;
 			height: 100%;
@@ -379,7 +383,8 @@ img {
 	width: auto !important;
 	font-size: 1rem;
 	/* убрать рекламу и логотип форума */
-	> div table tr[valign="top"] {
+	> div table tr[valign="top"],
+	> div#go_1 {
 		display: none !important;
 	}
 	/* меню поиска */
@@ -407,18 +412,11 @@ img {
 		}
 		b {
 			a {
-				margin-left: -5.5rem;
-				padding: 0.5rem 0.75rem;
+				margin-left: -5rem;
+				padding: 0.5rem 0.75rem 0.5rem 2.5rem;
 				font-weight: bold;
-				&:before {
-					content:'';
-					display: inline-block;
-					width: 1em;
-					height: 1em;
-					margin: 0 1.25rem -0.125em 0;
-					background: url(src/person.svg) center no-repeat;
-					background-size: 1.5em;
-				}
+				background: url('src/person.svg') no-repeat left;
+				background-size: 1.5rem;
 			}
 		}
 		> a {
@@ -464,7 +462,7 @@ img {
 				color: white;
 			}
 			#post-member-usercp {
-				padding: 0.25rem 1.5rem;
+				padding: 0.25rem 2rem 0.25rem 1.5rem;
 				overflow: hidden;
 				font-size: 1rem;
 				font-weight: bold;
@@ -472,19 +470,14 @@ img {
 				outline: none;
 				border: none;
 				background: none;
-				&:after {
-					content:'';
-					display: inline-block;
-					width: 1em;
-					height: 1em;
-					margin: 0 0 -0.125em 0.5rem;
-					opacity: 0.5;
-					background: url(src/down_white.png) center no-repeat;
-					background-size: 1.5em;
-				}
+				background-image: url('src/down_white.svg');
+				background-repeat: no-repeat;
+				background-size: 1.5rem;
+				background-position: right;
 			}
 		}
 	}
+	/* менюшки */
 	.popupmenu-new,
 	.popupmenu {
 		.border-radius;
@@ -520,10 +513,10 @@ img {
 				.pref(box-sizing, border-box);
 				outline: none;
 				border: none;
-				border-bottom: 2px solid mix(@color, @bgColor, 20%);
+				border-bottom: 0.125rem solid mix(@color, @bgColor, 20%);
 				background: @bgColor;
 				&:focus {
-					border-bottom: 2px solid @linkColor;
+					border-bottom-color: @linkColor;
 				}
 			}
 			.button {
@@ -532,7 +525,7 @@ img {
 				top: 0;
 				right: 0;
 				width: 2.5rem;
-				heigth: 2.5rem;
+				height: 2.5rem;
 				overflow: hidden;
 			}
 			input[type="checkbox"] {
@@ -549,41 +542,72 @@ img {
 			text-align: center;
 			a {
 				padding: 0.5rem;
-				font-size: 1rem;
+				font-size: 14*@rem;
 				font-weight: bold;
 				text-decoration: none;
 				text-transform: uppercase;
 				color: @linkColor;
 			}
 		}
-		&#ipb-tl-search_menu {
+		&#ipb-tl-search_menu,
+		&[id*="fav-subscribe-"] {
 			width: 20rem !important;
 			left: auto !important;
 			right: 0.5rem;
 		}
-		&#post-member-usercp_menu {
-			width: 10rem !important;
-			left: auto !important;
-			right: 0.5rem;
-		}
+		/* меню пользователя */
 		&[id*="post-member"] {
 			width: 20rem !important;
+			
 		}
-		&#topicmenu-options {
+		&#post-member-usercp_menu,
+		&#topicmenu-options,
+		&#favmenu-options_menu {
 			width: 10rem !important;
 			left: auto !important;
 			right: 0.5rem;
 		}
 	}
+	/* меню ползователя */
+div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) {
+	> .popupmenu-item-last {
+		.popupmenu-item,
+		.popupmenu-item-last {
+			img {display: none !important;}
+			a[href*="act=qms"],
+			a[href*="showuser"],
+			a[href*="search"] {
+				padding-left: 2.5rem;
+				margin-left: 0.25rem;
+				background-position: left;
+				background-repeat: no-repeat;
+				background-size: 1.5rem;
+			}
+			a[href*="act=qms"] {
+				background-image: url(src/message.svg);
+			}
+			a[href*="showuser"] {
+				background-image: url(src/person.svg);
+			}
+			a[href*="search"] {
+				background-image: url(src/search.svg);
+			}
+		}
+	}
+}
 	/* уведомление QMS */
 	#events-wrapper {
 //		display: block !important;
+		.border-radius;
+		font-size: 1rem;
+//		font-weight: bold;
+		background: #60A234;
 	}
 	/* Ссылки на родительские форумы */
 	#navstrip {
 		margin: 1rem 0;
 		padding: 0;
-		font-size: 1rem;
+		font-size: 15*@rem;
 		font-weight: normal;
 		.color(50%);
 		img {
@@ -595,144 +619,153 @@ img {
 			.color(50%);
 		}
 	}
-	> .ipbtable {
+	> .ipbtable,
+	> div {
 		margin: 0;
 		padding: 0;
-		/* пагинация */
-		.pagelink,
-		.pagelinklast,
-		.pagecurrent {
-			padding: 0;
-			margin: 0;
-			vertical-align: middle;
-			font-size: 1rem;
-			font-weight: bold;
-			border: none;
-			background: none;
-			a {
-				padding: 0.5rem;
-				.color(50%);
-			}
-			a[title="На первую страницу"]
-			a[title="Предыдущая страница"],
-			a[title="Следующая страница"],
-			a[title="На последнюю страницу"] {
-				
-			}
-			a[title="Предыдущая страница"] {
-				
-			}
-			a[title="Следующая страница"] {
-				
-			}
-			a[title="На первую страницу"],
-			a[title="На последнюю страницу"] {
-				color: transparent;
-				&:before {
-					content:"";
-					display: inline-block;
-					margin-right: -0.5rem;
-					.color(50%);
-				}
-			}
-			a[title="На первую страницу"] {
-				&:before {
-					content:"<<";
-				}
-			}
-			a[title="На последнюю страницу"] {
-				&:before {
-					content:">>";
-				}
-			}
+	}
+	/* пагинация */
+	.pagelink,
+	.pagelinklast,
+	.pagecurrent {
+		padding: 0;
+		margin: 0;
+		vertical-align: middle;
+		font-size: 1rem;
+		font-weight: bold;
+		border: none;
+		background: none;
+		a {
+			padding: 0.5rem;
+			.color(50%);
 		}
-		span[id*="page-jump"] {
-			padding: 0.25rem 0.75rem;
-			font-weight: bold;
-			.color(50%) !important;
-			img {
-				display: none;
-			}
-			&:after {
-				content:'';
-				display: inline-block;
-				width: 1em;
-				height: 1em;
-				margin: 0 0 -0.125em 0.5rem;
-				background: url(src/down.png) center no-repeat;
-				background-size: 1.5em;
-			}
-		}
-		.pagecurrent {
-			margin: 0 0.25rem;
-			padding: 0.25rem 0.75rem;
-			.border-radius;
-			color: white;
-			background: @spoilColor;
-		}
-		.pagelinklast {
+		a[title="На первую страницу"]
+		a[title="Предыдущая страница"],
+		a[title="Следующая страница"],
+		a[title="На последнюю страницу"] {
 			
 		}
-		/* меню выбора страницы */
-		.popupmenu {
-			left: 0.5rem !important;
-			.popupmenu-category {
-				font-size: 1rem;
-				padding: 0.75rem;
-				color: @color;
-				border: none;
-				background: none;
+		a[title="Предыдущая страница"] {
+			
+		}
+		a[title="Следующая страница"] {
+			
+		}
+		a[title="На первую страницу"],
+		a[title="На последнюю страницу"] {
+			color: transparent;
+			&:before {
+				content:"";
+				display: inline-block;
+				margin-right: -0.5rem;
+				.color(50%);
 			}
-			input[type="text"] {
-				width: 8rem;
-				margin-bottom: 1.5rem;
-				padding: 0.25rem 0;
-				font-size: 1rem;
-				color: @color;
-				.pref(box-sizing, border-box);
-				outline: none;
-				border: none;
-				border-bottom: 2px solid mix(@color, @bgColor, 20%);
-				background: @bgColor;
-				&:focus {
-					border-bottom: 2px solid @linkColor;
-				}
+		}
+		a[title="На первую страницу"] {
+			&:before {
+				content:"<<";
 			}
-			.button {
-				font-size: 1rem;
-				font-weight: bold;
-				text-transform: uppercase;
-				color: @linkColor;
-				border: none;
-				background: none;
+		}
+		a[title="На последнюю страницу"] {
+			&:before {
+				content:">>";
 			}
 		}
 	}
+	span[id*="page-jump"] {
+		margin: 0 0.5rem;
+		padding: 0.25rem 2rem 0.25rem 0.75rem;
+		font-weight: bold;
+		.color(50%) !important;
+		background: url('src/down_grey.svg') no-repeat right;
+		background-size: 1.5rem;
+		img {
+			display: none;
+		}
+	}
+	.pagecurrent {
+		margin: 0 0.25rem;
+		padding: 0.25rem 0.75rem;
+		.border-radius;
+		color: white;
+		background: @spoilColor;
+	}
+	.pagelinklast {
+		
+	}
+	/* меню выбора страницы */
+	.popupmenu {
+		left: 0.5rem !important;
+		.popupmenu-category {
+			font-size: 1rem;
+			padding: 0.75rem;
+			color: @color;
+			border: none;
+			background: none;
+		}
+		input[type="text"] {
+			width: 8rem;
+			margin-bottom: 1.5rem;
+			padding: 0.25rem 0;
+			font-size: 1rem;
+			color: @color;
+			.pref(box-sizing, border-box);
+			outline: none;
+			border: none;
+			border-bottom: 2px solid mix(@color, @bgColor, 20%);
+			background: @bgColor;
+			&:focus {
+				border-bottom: 2px solid @linkColor;
+			}
+		}
+		.button {
+			font-size: 1rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: @linkColor;
+			border: none;
+			background: none;
+		}
+	}
 	
-	/* ответить и поиск по теме */
+	/* ответить и поиск по теме | мультимодерация*/
 	.nopad,
-	.barc {
+	.barc,
+	.bar {
+		border: none;
+		background: none;
 		form {
-//			float: right;
 			color: @color;
 			input[type="text"] {
 				padding: 0.25rem;
-				font-size: 1rem;
+				font-size: 15*@rem;
 				.color(25%);
 				.pref(box-sizing, border-box);
 				outline: none;
 				border: none;
-				border-bottom: 2px solid mix(@color, @bgColor, 20%);
+				border-bottom: 0.125rem solid mix(@color, @bgColor, 20%);
 				background: transparent;
 				&:focus {
 					color: @color;
-					border-bottom: 2px solid @linkColor;
+					border-bottom-color: @linkColor;
 				}
 			}
 		}
+		select {
+			padding-right: 1.5rem;
+			font-size: 1rem;
+			.color(50%);
+			border: none;
+			outline: none;
+			background-color: none;
+			background: url(src/down_grey.svg) right no-repeat;
+			background-size: 1.5rem;
+			.pref(appearance, none);
+		}
 		.button {
 			display: inline-block;
-			font-size: 1rem;
+			margin: 0 0.5rem;
+			font-size: 14*@rem;
 			font-weight: bold;
 			text-transform: uppercase;
 			color: @linkColor;
@@ -749,10 +782,11 @@ img {
 			&:before {
 				display: inline-block;
 				content:'';
-				padding: 0.5rem;
+				padding: 0.5rem 0.75rem;
 				.border-radius;
-				font-size: 1rem;
+				font-size: 14*@rem;
 				font-weight: bold;
+				text-transform: uppercase;
 				color: white;
 				background: @spoilColor;
 			}
@@ -764,7 +798,7 @@ img {
 			content:'Ответ';
 		}
 	}
-	/* Список сообщени */
+	/* Список постов */
 	> .borderwrap {
 		margin: 0 0.5rem;
 		padding: 0;
@@ -772,7 +806,7 @@ img {
 		background: none;
 		/* название темы */
 		.maintitle {
-			padding: 0.25rem 0 !important;
+			padding: 0.25rem !important;
 			.border-radius;
 			border: none;
 			background: @spoilColor;
@@ -790,18 +824,14 @@ img {
 						border: none;
 						background: none;
 						a {
-							padding: 0 0.5rem !important;
+							display: inline-block;
+							padding: 0 2rem 0 0 !important;
 							color: white;
 							font-size: 1rem;
-							&:after {
-								content:'';
-								display: inline-block;
-								width: 1em;
-								height: 1em;
-								margin: 0 0 -0.125em 0.5rem;
-								background: url(src/down_white.png) center no-repeat;
-								background-size: 1.5em;
-							}
+							background-image: url('src/down_white.svg');
+							background-repeat: no-repeat;
+							background-size: 1.5rem;
+							background-position: right;
 						}
 					}
 					img { display: none;}
@@ -959,6 +989,222 @@ img {
 				}
 			}
 		}
+		/* список тем */
+		> TABLE.ipbtable:not([data-post]) {
+			margin: 0.5rem 0 0 !important;
+			.border-radius;
+			border-collapse: collapse;
+			color: @color;
+			background: @bgColor;
+			.boxShadow(1);
+			select {
+				padding: 0 1.5rem 0 0;
+				width: 10rem;
+				font-size: 16*@rem;
+				.color(70%);
+				border: none;
+				background: none;
+				.pref(appearance, none);
+				background: url(src/down_grey.svg) no-repeat right;
+				background-size: 1.5rem;
+			}
+			th, td {
+				padding: 0;
+				font-size: 1rem;
+				color: @color;
+				border: none;
+				background: none;
+				&:last-child:not(.darkrow1) { // чекбоксы
+					text-align: center;
+					padding: 0 !important;
+					min-width: 2rem !important;
+					a {
+						display: inline-block;
+						width: 1rem;
+						height: 1rem;
+					}
+					img {
+						display: block;
+						width: 1rem;
+						height: 1rem;
+						opacity: 0.7;
+					}
+				}
+			}
+			.nopad {
+				padding: 0;
+			}
+			th:last-child {
+				a {
+					margin-left: 0.5rem;
+				}
+			}
+			/* шапка списка */
+			tr:nth-child(1) {
+				th {
+					padding: 0.5rem !important;
+					font-size: 14*@rem;
+					text-align: left !important;
+					font-weight: normal;
+					line-height: 1.25em;
+					.color(50%);
+					border-bottom: 1px solid @borderColor;
+				}
+			}
+			.darkrow1 {
+				padding: 1rem;
+				border-bottom: 1px solid @borderColor;
+				b {			
+					font-size: 1.25rem;
+					font-weight: normal;
+					.color(70%);
+				}
+			}
+			tr[data-item-fid] {
+				td, th {
+					padding: 0.75rem 0.5rem;
+					line-height: 1.25;
+					border-bottom: 1px solid @borderColor;
+					span, a {
+						font-size: 15*@rem;
+						.color(50%);
+					}
+					a[href*="showuser"] {
+						font-weight: bold;
+					}
+					.lastaction { // дата послед. сообщ.
+						font-size: 14*@rem;
+						a[href*="getlastpost"] {
+							font-size: 14*@rem;
+						}
+					}
+				}
+				&:last-child {
+					td {
+						border: none;
+					}
+				}
+				td:nth-child(1) { /* иконка списка */
+					min-width: 1.5rem !important;
+					img {
+						width: 1rem;
+					}
+				}
+				td:nth-child(2) { /* название темы, пагинация и описание */
+					a[href*="view=getnewpost"] { // к непрочитанному
+						position: relative;
+						display: inline-block;
+						width: 1rem;
+						height: 1rem;
+						margin-bottom: -0.125rem;
+						border-radius: 100%;
+						background: @linkColor;
+						img {display: none;}
+						&:before {
+							position: absolute;
+							display: inline-block;
+							box-sizing: border-box;
+							content: '';
+							top: 0.25rem;
+							left: 3*@rem;
+							width: 0.5rem;
+							height: 0.5rem;
+							border-top: 0.1875rem solid @bgColor;
+							border-left: 0.1875rem solid @bgColor;
+							.rotate(135deg);
+						}
+					}
+					span a[title*="Тема создана"] {
+						font-size: 1rem;
+						color: @color;
+					}
+					a[onclick*="PopUp"] { // аттачи
+						display: inline-block;
+						width: 1.25rem;
+						height: 1.25rem;
+						line-height: 1rem;
+						vertical-align: middle;
+						background: url('src/attach.svg') no-repeat center;
+						background-size: 1.25rem;
+						img {display: none;}
+					}
+					span:not(.minipagelink, minipagelinklast) {
+						display: inline-block;
+						margin: 0;
+						font-size: 1rem;
+						padding: 0 !important;
+						border: none;
+						background: none;
+					}
+					a[title="Переход по страницам"] {
+						img {
+							display: inline-block;
+							width: 1rem;
+						}
+					}
+					.minipagelink, .minipagelinklast { // пагинация
+						display: inline-block;
+						margin: 0;
+						padding: 0;
+						font-weight: bold;
+						border: none;
+						background: none;
+						a {
+							padding: 0 0.25rem;
+							font-size: 14*@rem;
+							.color(50%);
+						}
+					}
+					.minipagelinklast {
+						position: relative;
+						margin-left: 1rem;
+						a:after {
+							content:'>>';
+							position: absolute;
+							display: inline-block;
+							left: -0.5rem;
+							width: 1.25rem;
+							height: 1rem;
+							background: @bgColor;
+//							outline: 1px solid red;
+						}
+					}
+					.desc {
+						margin: 0.25rem 0 0;
+						padding: 0;
+						> span:empty {display: none;}
+						span, a {
+							font-size: 14*@rem;
+						}
+						br {display: none;}
+						span:not(.forumdesc) {
+							.color(50%);
+						}
+						.forumdesc {
+							display: block;
+							margin: 0;
+							a {
+								color: @linkColor;
+							}
+							i {
+								.color(50%);
+							}
+							b {
+								display: block;
+							}
+						}
+					}
+				}
+				td {
+					a[id*="fav-subscribe"] {
+						padding: 0 1.5rem 0 0;
+						background: url(src/down_grey.svg) no-repeat right;
+						background-size: 1.5rem;
+					}
+					img[title="Открыть меню"] {display: none;}
+				}
+			}
+		}
 		/* Пост */
 		TABLE.ipbtable[data-post] {
 			margin: 0.5rem 0;
@@ -989,9 +1235,12 @@ img {
 							a {
 								display: inline-block;
 								text-align: center;
-								padding: 0.5rem;
+								margin: 0.25rem 0 0;
+								padding: 0.5rem 1.5rem 0.5rem 0.5rem;
 								font-size: 18*@rem;
 								color: @color;
+								background: url(src/down_grey.svg) no-repeat right;
+								background-size: 1.5rem;
 							}
 						}
 					}
@@ -1162,15 +1411,8 @@ img {
 								display: inline-block;
 								margin: 0.25rem 0;
 								&:before {
-									display: inline-block;
-									width: 1.5rem;
-									height: 1.5rem;
+									.iconStyle('src/attach.svg');
 									margin-right: 0.3rem;
-									content:'';
-									background-image: url(src/attach.svg);
-									background-repeat: no-repeat;
-									background-size: 1.5rem;
-									vertical-align: middle;
 								}
 							}
 						}
@@ -1203,6 +1445,8 @@ img {
 							font-weight: bold;
 							color: mix(@color, @bgColor, 50%);
 							text-align: left;
+							border: none;
+							background: none;
 						}
 						span[style="font-family:monospace"] {
 							font-family: 'roboto mono', monospace !important;
@@ -1354,12 +1598,13 @@ img {
 			background: none;
 			DIV[style*="float: right"] {
 				a {
+					font-size: 15*@rem;
 					.color(50%);
 				}
 			}
 		}
 		.formsubtitle {
-			margin: 1rem 0.25rem 0;
+			margin: 1rem 0.5rem 0;
 			padding: 0 !important;
 			font-style: italic;
 			.color(50%);
@@ -1371,6 +1616,42 @@ img {
 			}
 		}
 	}
+	.activeusers {
+		border: none;
+		.row2 {
+			background: @tmColor;
+			.desc {
+				font-size: 15*@rem;
+				.color(70%);
+			}
+			form {
+				font-size: 15*@rem;
+				.color(70%);
+				select {
+					padding: 0 1.5rem 0 0;
+					margin-bottom: 0.5rem;
+					font-size: 16*@rem;
+					.color(70%);
+					border: none;
+					background: none;
+					.pref(appearance, none);
+					background: url(src/down_grey.svg) no-repeat right;
+					background-size: 1.5rem;
+				}
+				input[type="submit"] {
+					padding: 0.25rem 0.75rem;
+					margin-bottom: 0.5rem;
+					font-size: 14*@rem;
+					text-transform: uppercase;
+					.color(50%);
+					font-weight: bold;
+					
+					border: none;
+					background: none;
+				}
+			}
+		}
+	}
 	#gfooter {
 		padding: 0 0.5rem;
 		background: none;
@@ -1379,7 +1660,7 @@ img {
 			.border-radius;
 			background: @spoilColor;
 			TD[width="25%"] {
-				padding: 0 0.5rem !important;
+				padding: 0 0.75rem !important;
 				font-size: 0.75rem;
 				font-style: italic;
 			}
@@ -1393,10 +1674,17 @@ img {
 		font-size: 0.75rem;
 		.color(50%);
 		background: transparent;
+		a {
+			.color(50%);
+			font-weight: bold;
+		}
+	}
+	.social-icons {
+		a:before {
+			color: @linkColor;
+		} 
+	}
+	a[href*='http://www.liveinternet.ru/'] {
+		display: none;
 	}
 }
-
-/*
-*	PANEL
-*/
-

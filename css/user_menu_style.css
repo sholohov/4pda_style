@@ -1,0 +1,68 @@
+/* меню ползователя */
+div[class="popupmenu-new"] {
+	> .popupmenu-item-last[id*="post-member"] {
+		.popupmenu-item,
+		.popupmenu-item-last {
+			img {display: none !important;}
+			a[href*="act=qms"],
+			a[href*="showuser"],
+			a[href*="search"] {
+				padding-left: 2rem;
+				background-position: left;
+				background-repeat: no-repeat;
+				background-size: 1.5rem;
+			}
+			a[href*="act=qms"] {
+				background-image: url(http://s.4pda.to/forum/style_images/f/607-ic_nav_qms.png);
+			}
+			a[href*="showuser"] {
+				background-image: url(http://s.4pda.to/forum/style_images/f/607-ic_user.png);
+			}
+			a[href*="search"] {
+				background-image: url(http://s.4pda.to/forum/style_images/f/281-search_logo.png);
+			}
+		}
+	}
+}
+/* аватарка */
+.ipbtable[data-post] {
+	.postdetails {
+		center {
+			position: relative;
+			&:before {
+				content:'';
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				font-size: 1rem;
+				line-height: 100px;
+				font-weight: bold;
+				background: url(http://s.4pda.to/forum/style_images/f/607-ic_user.png) center no-repeat;
+				background-size: contain;
+			}
+			.user-avatar {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				display: block;
+				margin: auto;
+				width: 100px;
+				height: 100px;
+				img {
+					display: inline-block;
+					max-width: 100px;
+					max-height: 100px;
+				}
+			}
+		}
+	}
+}
+
+/* замена аватарки кумыса */
+
+.user-box > .photo {
+	IMG[width="100"][height="100"][alt="Аватар"] {
+		content:url(src/person.svg);
+	}
+}

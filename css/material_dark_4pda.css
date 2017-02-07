@@ -1,0 +1,1886 @@
+/**
+ * MATERIAL STYLE
+ * Стиль для сайта 4PDA.RU
+ * Автор: Морфий
+*/
+/*
+ *	DARK-COLOR
+*/
+*[style*="color:royalblue"] {
+  color: #ced8f7 !important;
+}
+*[style*="color:blue"] {
+  color: #9999ff !important;
+}
+*[style*="color:darkblue"] {
+  color: #3f3fff !important;
+}
+*[style*="color:indigo"] {
+  color: #aa35ff !important;
+}
+*[style*="color:crimson"] {
+  color: #ee4062 !important;
+}
+*[style*="color:red"] {
+  color: #ff4242 !important;
+}
+*[style*="color:darkred"] {
+  color: #ff2525 !important;
+}
+*[style*="color:deeppink"] {
+  color: #ff61b6 !important;
+}
+*[style*="color:purple"] {
+  color: #ff3ae6 !important;
+}
+*[style*="Black"]:not([style*="background"]),
+*[style*="black"]:not([style*="background"]),
+*[style*="#000000"]:not([style*="background"]),
+*[style*="#000"]:not([style*="background"]),
+*[style*="background-color:white"] *[style*="color:black"],
+*[style*="color:black"] *[style*="background-color:white"],
+*[style*="background-color:white"] *[style*="color:#000000"],
+*[style*="color:#000000"] *[style*="background-color:white"],
+*[style*="background-color:white"] *[style*="color:#000"],
+*[style*="color:#000"] *[style*="background-color:white"] {
+  color: white !important;
+}
+HTML {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+HTML body {
+  position: relative;
+  font-family: Arial, 'Roboto';
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  color: white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #1e1e1e;
+}
+HTML body ul,
+HTML body ol {
+  padding-left: 1.5rem;
+}
+HTML body a {
+  cursor: pointer;
+  text-decoration: none !important;
+  color: #adf;
+}
+/*
+*	PICTURES SIZE
+*/
+img {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+}
+/*
+*         FONT_SIZE
+*/
+span[style*="font-size:36pt"] {
+  font-size: 3.75rem !important;
+  line-heigth: 1.4 !important;
+}
+span[style*="font-size:36pt"] * {
+  font-size: inherit !important;
+}
+span[style*="font-size:24pt"] {
+  font-size: 2.55rem !important;
+  line-heigth: 1.4 !important;
+}
+span[style*="font-size:24pt"] * {
+  font-size: inherit !important;
+}
+span[style*="font-size:18pt"] {
+  font-size: 1.95rem !important;
+  line-heigth: 1.4 !important;
+}
+span[style*="font-size:18pt"] * {
+  font-size: inherit !important;
+}
+span[style*="font-size:14pt"] {
+  font-size: 1.55rem !important;
+  line-heigth: 1.4 !important;
+}
+span[style*="font-size:14pt"] * {
+  font-size: inherit !important;
+}
+span[style*="font-size:12pt"] {
+  font-size: 1.35rem !important;
+  line-heigth: 1.4 !important;
+}
+span[style*="font-size:12pt"] * {
+  font-size: inherit !important;
+}
+span[style*="font-size:10pt"] {
+  font-size: 1.15rem !important;
+  line-heigth: 1.4 !important;
+}
+span[style*="font-size:10pt"] * {
+  font-size: inherit !important;
+}
+span[style*="font-size:8pt"] {
+  font-size: 0.95rem !important;
+  line-heigth: 1.4 !important;
+}
+span[style*="font-size:8pt"] * {
+  font-size: inherit !important;
+}
+/*
+*         POST_BLOCK
+*/
+.post-block {
+  display: block;
+}
+.post-block.quote,
+.post-block.code,
+.post-block.hidden,
+.post-block.spoil {
+  display: block;
+  padding: 0.5rem 0.625rem;
+  margin: 0.5rem 0;
+  border: none;
+  background: none;
+  border-radius: 2px;
+  background-clip: padding-box;
+}
+.post-block.quote > .block-title,
+.post-block.code > .block-title,
+.post-block.hidden > .block-title,
+.post-block.spoil > .block-title {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: bold;
+  font-style: italic;
+  border: none;
+  background: none;
+}
+.post-block.quote > .block-body,
+.post-block.code > .block-body,
+.post-block.hidden > .block-body,
+.post-block.spoil > .block-body {
+  margin: 0;
+  padding: 0;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  background: none;
+}
+.post-block.quote {
+  position: relative;
+  background: rgba(55, 70, 77, 0.8);
+}
+.post-block.quote > .block-title {
+  color: #b1e0ff;
+}
+.post-block.quote > .block-title:before,
+.post-block.quote > .block-title:after {
+  content: '' !important;
+}
+.post-block.quote > .block-title:empty {
+  margin-left: 0;
+}
+.post-block.quote > .block-title:empty:before {
+  content: 'Цитата' !important;
+}
+.post-block.quote > .block-title a[title="Перейти к сообщению"] {
+  float: left;
+  margin: -0.5rem 0.25rem 0 -0.25rem !important;
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  -ms-opacity: 0.8;
+  -o-opacity: 0.8;
+  opacity: 0.8;
+}
+.post-block.quote > .block-title a[title="Перейти к сообщению"]:before {
+  background: #b1e0ff;
+}
+.post-block.quote > .block-title a[title="Ссылка "] {
+  margin: 0 0.5rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #adf;
+  border-bottom: 1px solid #6c8596;
+}
+.post-block.quote > .block-body {
+  color: rgba(240, 250, 255, 0.9);
+}
+.post-block.code {
+  counter-reset: num-line;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  background: rgba(80, 73, 48, 0.8);
+}
+.post-block.code > .block-title {
+  margin: 0;
+  padding: 0.5rem 0.5rem 0.5rem 0.625rem;
+  color: rgba(255, 243, 203, 0.75);
+}
+.post-block.code > .block-title:before {
+  content: 'Код';
+}
+.post-block.code > .block-body {
+  font-family: 'Roboto Mono';
+  padding: 0;
+  margin: 0.5rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  font-size: 1rem;
+  line-height: 1.375rem !important;
+  -webkit-tab-size: 4;
+  tab-size: 4;
+  color: rgba(255, 249, 229, 0.85);
+  background: linear-gradient(rgba(88, 81, 57, 0.806) 1.375rem, transparent 1.375rem);
+  background-size: 2.75rem 2.75rem;
+}
+.post-block.code > .block-body br {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
+.post-block.code > .block-body br:after {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  counter-increment: num-line;
+  content: counter(num-line);
+  background: red;
+}
+.post-block.code.box > .block-title:after {
+  content: '' !important;
+}
+.post-block.code.box > .block-title:before {
+  content: 'Развернуть Код' !important;
+}
+.post-block.code.box > .block-body {
+  max-height: 9.5rem;
+  overflow-y: hidden;
+}
+.post-block.code.unbox > .block-title:before {
+  content: 'Свернуть Код' !important;
+}
+.post-block.hidden {
+  background: rgba(158, 158, 158, 0.1);
+}
+.post-block.hidden > .block-title {
+  color: rgba(253, 253, 253, 0.73);
+}
+.post-block.hidden > .block-title:before {
+  content: 'Скрытый текст: ';
+}
+.post-block.hidden > .block-title:empty:before {
+  content: 'Скрытый текст';
+}
+.post-block.hidden > .block-body a {
+  color: #adf;
+}
+.post-block.spoil {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 1rem;
+  background: rgba(150, 150, 150, 0.1);
+}
+.post-block.spoil > a {
+  display: inline-block !important;
+  margin: 0.25rem 0 !important;
+  height: 1rem;
+  width: 1.5rem;
+}
+.post-block.spoil .spoil {
+  margin: 0.5rem 0 0.5rem;
+}
+.post-block.spoil .spoil .block-body {
+  margin-right: 0;
+}
+.post-block.spoil:before {
+  position: absolute;
+  left: 0.625rem;
+  top: 0.75rem;
+  font-size: 1em;
+  content: '';
+  height: 0.625em;
+  width: 0.625em;
+  margin: 0 0.75rem 0 0.25rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  border-top: 0.125em solid;
+  border-left: 0.125em solid;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.post-block.spoil > .block-title {
+  padding: 0.375rem 2.375rem;
+  font-style: normal;
+  min-height: 1.25rem;
+  color: white !important;
+  font-size: 1rem;
+  overflow: hidden;
+}
+.post-block.spoil > .block-title:before,
+.post-block.spoil > .block-title:after {
+  content: '' !important;
+}
+.post-block.spoil > .block-title.empty:before,
+.post-block.spoil > .block-title:empty:before {
+  position: relative;
+  display: inline;
+  content: 'Спойлер' !important;
+}
+.post-block.spoil > .block-title * {
+  color: inherit !important;
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+  font-style: normal !important;
+}
+.post-block.spoil > .block-body {
+  padding: 0.75rem;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.post-block.spoil.close {
+  background: rgba(158, 158, 158, 0.3);
+}
+.post-block.spoil.close > a {
+  color: White !important;
+}
+.post-block.spoil.close:before {
+  -webkit-transform: rotate(-135deg) translate(0.125rem, 0.125rem);
+  -moz-transform: rotate(-135deg) translate(0.125rem, 0.125rem);
+  -ms-transform: rotate(-135deg) translate(0.125rem, 0.125rem);
+  -o-transform: rotate(-135deg) translate(0.125rem, 0.125rem);
+  transform: rotate(-135deg) translate(0.125rem, 0.125rem);
+  border-top-color: white;
+  border-left-color: white;
+}
+.post-block.spoil.close > .block-body {
+  display: none;
+}
+.post-block.spoil.open > a {
+  color: #818181;
+}
+.post-block.spoil.open:before {
+  -webkit-transform: rotate(45deg) translate(0.125rem, 0.125rem);
+  -moz-transform: rotate(45deg) translate(0.125rem, 0.125rem);
+  -ms-transform: rotate(45deg) translate(0.125rem, 0.125rem);
+  -o-transform: rotate(45deg) translate(0.125rem, 0.125rem);
+  transform: rotate(45deg) translate(0.125rem, 0.125rem);
+  border-top-color: #ababab;
+  border-left-color: #ababab;
+}
+.post-block.spoil.open .open {
+  background: #2d2d2d;
+}
+.post-block.spoil.open .open .open {
+  background: rgba(150, 150, 150, 0.1);
+}
+.post-block.spoil.open .open .open .open {
+  background: #2d2d2d;
+}
+.post-block.spoil.open .open .open .open .open {
+  background: rgba(150, 150, 150, 0.1);
+}
+.post-block.spoil.open .open .open .open .open .open {
+  background: #2d2d2d;
+}
+.post-block.spoil.open .open .open .open .open .open .open {
+  background: rgba(150, 150, 150, 0.1);
+}
+.post-block.spoil.open .open .open .open .open .open .open .open {
+  background: #2d2d2d;
+}
+.post-block.spoil.open > .block-title {
+  color: #ababab !important;
+  margin: 0;
+}
+/*
+*	ADM TAGS
+*/
+.post-block.cur > .block-title {
+  background: #009600;
+}
+.post-block.cur > .block-body {
+  background: rgba(0, 150, 0, 0.07);
+}
+.post-block.mod > .block-title {
+  background: #0096e1;
+}
+.post-block.mod > .block-body {
+  background: rgba(0, 150, 225, 0.07);
+}
+.post-block.ex > .block-title {
+  background: #e14628;
+}
+.post-block.ex > .block-body {
+  background: rgba(225, 70, 40, 0.07);
+}
+.post-block.cur,
+.post-block.mod,
+.post-block.ex {
+  margin: 1rem 0;
+  display: table;
+  width: 100%;
+  min-height: 5rem;
+  overflow: hidden;
+  border-radius: 2px;
+  background-clip: padding-box;
+  background: #2d2d2d;
+}
+.post-block.cur > .block-title,
+.post-block.mod > .block-title,
+.post-block.ex > .block-title {
+  display: table-cell;
+  vertical-align: middle;
+  color: #2d2d2d;
+  width: 4rem;
+  text-align: center;
+  height: 100%;
+  font-size: 3rem;
+  border-radius: 0;
+  background-clip: padding-box;
+}
+.post-block.cur > .block-body,
+.post-block.mod > .block-body,
+.post-block.ex > .block-body {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 1rem;
+  text-align: left;
+  padding: 0.5rem;
+  height: 100%;
+  margin: 0;
+}
+#ipbwrapper {
+  margin: 0;
+  padding: 0;
+  width: auto !important;
+  font-size: 1rem;
+  /* убрать рекламу и логотип форума */
+  /* меню поиска */
+  /* ник и выход */
+  /* менюшки */
+  /* меню ползователя */
+  /* уведомление QMS */
+  /* Ссылки на родительские форумы */
+  /* пагинация */
+  /* меню выбора страницы */
+  /* ответить и поиск по теме | мультимодерация*/
+  /* Список постов */
+}
+#ipbwrapper > div table tr[valign="top"],
+#ipbwrapper > div#go_1 {
+  display: none !important;
+}
+#ipbwrapper #submenu {
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+#ipbwrapper #submenu .ipb-top-right-link a {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #969696;
+}
+#ipbwrapper .user_home {
+  top: -2rem !important;
+  padding: 0 0.5rem;
+  margin: 0;
+  color: transparent;
+}
+#ipbwrapper .user_home a {
+  font-size: 1rem;
+  color: #969696;
+}
+#ipbwrapper .user_home b a {
+  margin-left: -5rem;
+  padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+  font-weight: bold;
+  background: url('src/person.svg') no-repeat left;
+  background-size: 1.5rem;
+}
+#ipbwrapper .user_home > a {
+  padding: 0.5rem 0.75rem;
+  font-weight: bold;
+}
+#ipbwrapper #userlinks {
+  display: block;
+  margin: 0 0.5rem;
+  padding: 0;
+  border-radius: 2px;
+  background-clip: padding-box;
+  border: none;
+  background: rgba(158, 158, 158, 0.3);
+  /* Cсылки на форумы */
+  /* Упоменания, Сообщения, Избранное(\d*), Меню пользователя*/
+}
+#ipbwrapper #userlinks p {
+  margin: 0;
+  float: none !important;
+  text-align: center !important;
+}
+#ipbwrapper #userlinks a {
+  font-size: 1rem;
+}
+#ipbwrapper #userlinks .home a {
+  color: white;
+}
+#ipbwrapper #userlinks .home a i:before {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.75);
+}
+#ipbwrapper #userlinks p:not(.home) {
+  padding-right: 0.5rem;
+  color: transparent;
+}
+#ipbwrapper #userlinks p:not(.home) a {
+  padding: 0.25rem 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+#ipbwrapper #userlinks p:not(.home) #post-member-usercp {
+  padding: 0.25rem 2rem 0.25rem 1.5rem;
+  overflow: hidden;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  outline: none;
+  border: none;
+  background: none;
+  background-image: url('src/down_white.png');
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+  background-position: right;
+}
+#ipbwrapper .popupmenu-new,
+#ipbwrapper .popupmenu {
+  border-radius: 2px;
+  background-clip: padding-box;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background: #2d2d2d;
+  -webkit-box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.2);
+  -ms-box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.2);
+  -o-box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.2);
+  /* меню пользователя */
+}
+#ipbwrapper .popupmenu-new DIV[class*="popupmenu-item"],
+#ipbwrapper .popupmenu DIV[class*="popupmenu-item"] {
+  border: none;
+}
+#ipbwrapper .popupmenu-new DIV[class*="popupmenu-item"] img,
+#ipbwrapper .popupmenu DIV[class*="popupmenu-item"] img {
+  display: none;
+}
+#ipbwrapper .popupmenu-new DIV[class*="popupmenu-item"] a,
+#ipbwrapper .popupmenu DIV[class*="popupmenu-item"] a {
+  display: block;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: white;
+}
+#ipbwrapper .popupmenu-new form,
+#ipbwrapper .popupmenu form {
+  display: block;
+  position: relative;
+  margin: 1rem;
+  color: white;
+}
+#ipbwrapper .popupmenu-new form input[type="text"],
+#ipbwrapper .popupmenu form input[type="text"] {
+  width: 14rem;
+  margin-bottom: 1.5rem;
+  padding: 0.25rem 0;
+  font-size: 1rem;
+  color: white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  border-bottom: 0.125rem solid #575757;
+  background: #2d2d2d;
+}
+#ipbwrapper .popupmenu-new form input[type="text"]:focus,
+#ipbwrapper .popupmenu form input[type="text"]:focus {
+  border-bottom-color: #adf;
+}
+#ipbwrapper .popupmenu-new form .button,
+#ipbwrapper .popupmenu form .button {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  overflow: hidden;
+}
+#ipbwrapper .popupmenu-new form input[type="checkbox"],
+#ipbwrapper .popupmenu form input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+}
+#ipbwrapper .popupmenu-new form label,
+#ipbwrapper .popupmenu form label {
+  display: block;
+  margin-top: 0.5rem;
+}
+#ipbwrapper .popupmenu-new div[style="padding:4px"],
+#ipbwrapper .popupmenu div[style="padding:4px"] {
+  margin: 1rem;
+  text-align: center;
+}
+#ipbwrapper .popupmenu-new div[style="padding:4px"] a,
+#ipbwrapper .popupmenu div[style="padding:4px"] a {
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #adf;
+}
+#ipbwrapper .popupmenu-new#ipb-tl-search_menu,
+#ipbwrapper .popupmenu#ipb-tl-search_menu,
+#ipbwrapper .popupmenu-new[id*="fav-subscribe-"],
+#ipbwrapper .popupmenu[id*="fav-subscribe-"] {
+  width: 20rem !important;
+  left: auto !important;
+  right: 0.5rem;
+}
+#ipbwrapper .popupmenu-new[id*="post-member"],
+#ipbwrapper .popupmenu[id*="post-member"] {
+  width: 20rem !important;
+}
+#ipbwrapper .popupmenu-new#post-member-usercp_menu,
+#ipbwrapper .popupmenu#post-member-usercp_menu,
+#ipbwrapper .popupmenu-new#topicmenu-options,
+#ipbwrapper .popupmenu#topicmenu-options,
+#ipbwrapper .popupmenu-new#favmenu-options_menu,
+#ipbwrapper .popupmenu#favmenu-options_menu {
+  width: 10rem !important;
+  left: auto !important;
+  right: 0.5rem;
+}
+#ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item img,
+#ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item-last img {
+  display: none !important;
+}
+#ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item a[href*="act=qms"],
+#ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item-last a[href*="act=qms"],
+#ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item a[href*="showuser"],
+#ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item-last a[href*="showuser"],
+#ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item a[href*="search"],
+#ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item-last a[href*="search"] {
+  padding-left: 2.5rem;
+  margin-left: 0.25rem;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+}
+#ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item a[href*="act=qms"],
+#ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item-last a[href*="act=qms"] {
+  background-image: url(src/message.svg);
+}
+#ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item a[href*="showuser"],
+#ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item-last a[href*="showuser"] {
+  background-image: url(src/person.svg);
+}
+#ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item a[href*="search"],
+#ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item-last a[href*="search"] {
+  background-image: url(src/search.svg);
+}
+#ipbwrapper #events-wrapper {
+  border-radius: 2px;
+  background-clip: padding-box;
+  font-size: 1rem;
+  background: #60A234;
+}
+#ipbwrapper #navstrip {
+  margin: 1rem 0;
+  padding: 0;
+  font-size: 0.9375rem;
+  font-weight: normal;
+  color: #969696;
+}
+#ipbwrapper #navstrip img {
+  display: none;
+}
+#ipbwrapper #navstrip a {
+  padding: 0.5rem;
+  font-weight: bold;
+  color: #969696;
+}
+#ipbwrapper > .ipbtable,
+#ipbwrapper > div {
+  margin: 0;
+  padding: 0;
+}
+#ipbwrapper .pagelink,
+#ipbwrapper .pagelinklast,
+#ipbwrapper .pagecurrent {
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  background: none;
+}
+#ipbwrapper .pagelink a,
+#ipbwrapper .pagelinklast a,
+#ipbwrapper .pagecurrent a {
+  padding: 0.5rem;
+  color: #969696;
+}
+#ipbwrapper .pagelink a[title="На первую страницу"],
+#ipbwrapper .pagelinklast a[title="На первую страницу"],
+#ipbwrapper .pagecurrent a[title="На первую страницу"],
+#ipbwrapper .pagelink a[title="На последнюю страницу"],
+#ipbwrapper .pagelinklast a[title="На последнюю страницу"],
+#ipbwrapper .pagecurrent a[title="На последнюю страницу"] {
+  color: transparent;
+}
+#ipbwrapper .pagelink a[title="На первую страницу"]:before,
+#ipbwrapper .pagelinklast a[title="На первую страницу"]:before,
+#ipbwrapper .pagecurrent a[title="На первую страницу"]:before,
+#ipbwrapper .pagelink a[title="На последнюю страницу"]:before,
+#ipbwrapper .pagelinklast a[title="На последнюю страницу"]:before,
+#ipbwrapper .pagecurrent a[title="На последнюю страницу"]:before {
+  content: "";
+  display: inline-block;
+  margin-right: -0.5rem;
+  color: #969696;
+}
+#ipbwrapper .pagelink a[title="На первую страницу"]:before,
+#ipbwrapper .pagelinklast a[title="На первую страницу"]:before,
+#ipbwrapper .pagecurrent a[title="На первую страницу"]:before {
+  content: "<<";
+}
+#ipbwrapper .pagelink a[title="На последнюю страницу"]:before,
+#ipbwrapper .pagelinklast a[title="На последнюю страницу"]:before,
+#ipbwrapper .pagecurrent a[title="На последнюю страницу"]:before {
+  content: ">>";
+}
+#ipbwrapper span[id*="page-jump"] {
+  margin: 0 0.5rem;
+  padding: 0.25rem 2rem 0.25rem 0.75rem;
+  font-weight: bold;
+  color: #969696 !important;
+  background: url('src/down.png') no-repeat right;
+  background-size: 1.5rem;
+}
+#ipbwrapper span[id*="page-jump"] img {
+  display: none;
+}
+#ipbwrapper .pagecurrent {
+  margin: 0 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 2px;
+  background-clip: padding-box;
+  color: white;
+  background: rgba(158, 158, 158, 0.3);
+}
+#ipbwrapper .popupmenu {
+  left: 0.5rem !important;
+}
+#ipbwrapper .popupmenu .popupmenu-category {
+  font-size: 1rem;
+  padding: 0.75rem;
+  color: white;
+  border: none;
+  background: none;
+}
+#ipbwrapper .popupmenu input[type="text"] {
+  width: 8rem;
+  margin-bottom: 1.5rem;
+  padding: 0.25rem 0;
+  font-size: 1rem;
+  color: white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #575757;
+  background: #2d2d2d;
+}
+#ipbwrapper .popupmenu input[type="text"]:focus {
+  border-bottom: 2px solid #adf;
+}
+#ipbwrapper .popupmenu .button {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #adf;
+  border: none;
+  background: none;
+}
+#ipbwrapper .nopad,
+#ipbwrapper .barc,
+#ipbwrapper .bar {
+  border: none;
+  background: none;
+}
+#ipbwrapper .nopad form,
+#ipbwrapper .barc form,
+#ipbwrapper .bar form {
+  color: white;
+}
+#ipbwrapper .nopad form input[type="text"],
+#ipbwrapper .barc form input[type="text"],
+#ipbwrapper .bar form input[type="text"] {
+  padding: 0.25rem;
+  font-size: 0.9375rem;
+  color: #626262;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  border-bottom: 0.125rem solid #575757;
+  background: transparent;
+}
+#ipbwrapper .nopad form input[type="text"]:focus,
+#ipbwrapper .barc form input[type="text"]:focus,
+#ipbwrapper .bar form input[type="text"]:focus {
+  color: white;
+  border-bottom-color: #adf;
+}
+#ipbwrapper .nopad select,
+#ipbwrapper .barc select,
+#ipbwrapper .bar select {
+  padding-right: 1.5rem;
+  font-size: 1rem;
+  color: #969696;
+  border: none;
+  outline: none;
+  background-color: none;
+  background: url(src/down.png) right no-repeat;
+  background-size: 1.5rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+#ipbwrapper .nopad .button,
+#ipbwrapper .barc .button,
+#ipbwrapper .bar .button {
+  display: inline-block;
+  margin: 0 0.5rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #adf;
+  border: none;
+  background: none;
+}
+#ipbwrapper .nopad a[href*="reply"],
+#ipbwrapper .barc a[href*="reply"],
+#ipbwrapper .bar a[href*="reply"],
+#ipbwrapper .nopad a[href*="javascript:ShowHide"],
+#ipbwrapper .barc a[href*="javascript:ShowHide"],
+#ipbwrapper .bar a[href*="javascript:ShowHide"] {
+  display: inline-block;
+  margin: 0 0.5rem 0 0;
+  padding: 0;
+  vertical-align: middle;
+}
+#ipbwrapper .nopad a[href*="reply"] img,
+#ipbwrapper .barc a[href*="reply"] img,
+#ipbwrapper .bar a[href*="reply"] img,
+#ipbwrapper .nopad a[href*="javascript:ShowHide"] img,
+#ipbwrapper .barc a[href*="javascript:ShowHide"] img,
+#ipbwrapper .bar a[href*="javascript:ShowHide"] img {
+  display: none;
+}
+#ipbwrapper .nopad a[href*="reply"]:before,
+#ipbwrapper .barc a[href*="reply"]:before,
+#ipbwrapper .bar a[href*="reply"]:before,
+#ipbwrapper .nopad a[href*="javascript:ShowHide"]:before,
+#ipbwrapper .barc a[href*="javascript:ShowHide"]:before,
+#ipbwrapper .bar a[href*="javascript:ShowHide"]:before {
+  display: inline-block;
+  content: '';
+  padding: 0.5rem 0.75rem;
+  border-radius: 2px;
+  background-clip: padding-box;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  background: rgba(158, 158, 158, 0.3);
+}
+#ipbwrapper .nopad a[href*="javascript:ShowHide"]:before,
+#ipbwrapper .barc a[href*="javascript:ShowHide"]:before,
+#ipbwrapper .bar a[href*="javascript:ShowHide"]:before {
+  content: 'Быстрый ответ';
+}
+#ipbwrapper .nopad a[href*="reply"]:before,
+#ipbwrapper .barc a[href*="reply"]:before,
+#ipbwrapper .bar a[href*="reply"]:before {
+  content: 'Ответ';
+}
+#ipbwrapper > .borderwrap {
+  margin: 0 0.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+  /* название темы */
+  /* Опрос */
+  /* список тем */
+  /* Пост */
+  /* Подвал страницы */
+}
+#ipbwrapper > .borderwrap .maintitle {
+  padding: 0.25rem !important;
+  border-radius: 2px;
+  background-clip: padding-box;
+  border: none;
+  background: rgba(158, 158, 158, 0.3);
+}
+#ipbwrapper > .borderwrap .maintitle tr td:nth-child(1) {
+  padding: 0.25rem;
+  font-size: 1rem;
+}
+#ipbwrapper > .borderwrap .maintitle tr td:nth-child(1) img {
+  display: none;
+}
+#ipbwrapper > .borderwrap .maintitle tr td:nth-child(3) .popmenubutton {
+  text-align: right;
+  height: 1.4rem;
+  border: none;
+  background: none;
+}
+#ipbwrapper > .borderwrap .maintitle tr td:nth-child(3) .popmenubutton a {
+  display: inline-block;
+  padding: 0 2rem 0 0 !important;
+  color: white;
+  font-size: 1rem;
+  background-image: url('src/down_white.png');
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+  background-position: right;
+}
+#ipbwrapper > .borderwrap .maintitle tr td:nth-child(3) img {
+  display: none;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] > TABLE.ipbtable {
+  display: table-block;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 2px;
+  background-clip: padding-box;
+  background: #2d2d2d;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);;
+  -ms-box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);;
+  -o-box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] > TABLE.ipbtable tr,
+#ipbwrapper > .borderwrap FORM[action*="poll"] > TABLE.ipbtable td,
+#ipbwrapper > .borderwrap FORM[action*="poll"] > TABLE.ipbtable .borderwrap {
+  border: none;
+  background: none;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] > TABLE.ipbtable tr:nth-child(1) th {
+  padding: 1rem;
+  font-size: 1.25rem;
+  color: white;
+  border: none;
+  background: none;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] > TABLE.ipbtable tr:nth-child(2) td {
+  font-size: 1rem;
+  color: white;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] > TABLE.ipbtable tr:nth-child(2) td > .borderwrap {
+  margin: 0.5rem;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] > TABLE.ipbtable tr:nth-child(2) td > .borderwrap > div {
+  border: none;
+  background: none;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] > TABLE.ipbtable tr:nth-child(2) td > .borderwrap > div span {
+  font-size: 1rem;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] > TABLE.ipbtable tr:nth-child(2) td > .borderwrap > .ipbtable b {
+  font-weight: normal;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] > TABLE.ipbtable tr TD.row1[colspan="3"][align="center"] {
+  font-size: 1rem;
+  color: #969696;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] > TABLE.ipbtable tr TD.formbuttonrow {
+  background: none !important;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] > TABLE.ipbtable tr TD.formbuttonrow .button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: #adf;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  background: none;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] > TABLE.ipbtable tr td.catend {
+  display: none;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] b {
+  position: relative;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="radio"],
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="checkbox"] {
+  display: inline-block;
+  with: 1rem;
+  height: 1rem;
+  margin-right: 0.75rem;
+  opacity: 0;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="radio"] + b:before,
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="checkbox"] + b:before {
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  -o-pointer-events: none;
+  pointer-events: none;
+  position: absolute;
+  left: -2rem;
+  top: 0.0625rem;
+  content: '';
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  vertical-align: middle;
+  overflow: hidden;
+  border: 0.125rem solid #969696;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="radio"] + b:after,
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="checkbox"] + b:after {
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  -o-pointer-events: none;
+  pointer-events: none;
+  position: absolute;
+  left: -1.875rem;
+  top: 0.1875rem;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="radio"] + b {
+  transition: transform 0.3s;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="radio"] + b:before {
+  border-radius: 1rem;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="radio"] + b:after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 100%;
+  background: #adf;
+  -webkit-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  transform: scale(0, 0);
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="radio"]:checked + b:before {
+  border-color: #adf;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="radio"]:checked + b:after {
+  -webkit-transform: scale(0.65, 0.65);
+  -ms-transform: scale(0.65, 0.65);
+  transform: scale(0.65, 0.65);
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="checkbox"] + b {
+  transition: transform 0.3s;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="checkbox"] + b:before {
+  border-radius: 2px;
+  background-clip: padding-box;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="checkbox"] + b:after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  height: 0.75rem;
+  width: 0.375rem;
+  border-bottom: 0.15625rem solid #2d2d2d;
+  border-right: 0.15625rem solid #2d2d2d;
+  -webkit-transform: rotate(45deg) translate(0.125rem, -0.1875rem) scale(0, 0);
+  -ms-transform: rotate(45deg) translate(0.125rem, -0.1875rem) scale(0, 0);
+  transform: rotate(45deg) translate(0.125rem, -0.1875rem) scale(0, 0);
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="checkbox"]:checked + b:before {
+  background: #adf;
+  border-color: #adf;
+}
+#ipbwrapper > .borderwrap FORM[action*="poll"] input[type="checkbox"]:checked + b:after {
+  -webkit-transform: rotate(45deg) translate(0.125rem, -0.1875rem) scale(1, 1);
+  -ms-transform: rotate(45deg) translate(0.125rem, -0.1875rem) scale(1, 1);
+  transform: rotate(45deg) translate(0.125rem, -0.1875rem) scale(1, 1);
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) {
+  margin: 0.5rem 0 0 !important;
+  border-radius: 2px;
+  background-clip: padding-box;
+  border-collapse: collapse;
+  color: white;
+  background: #2d2d2d;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);;
+  -ms-box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);;
+  -o-box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);;
+  /* шапка списка */
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) select {
+  padding: 0 1.5rem 0 0;
+  width: 10rem;
+  font-size: 1rem;
+  color: #c0c0c0;
+  border: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background: url(src/down.png) no-repeat right;
+  background-size: 1.5rem;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) th,
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) td {
+  padding: 0;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  background: none;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) th:last-child:not(.darkrow1),
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) td:last-child:not(.darkrow1) {
+  text-align: center;
+  padding: 0 !important;
+  min-width: 2rem !important;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) th:last-child:not(.darkrow1) a,
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) td:last-child:not(.darkrow1) a {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) th:last-child:not(.darkrow1) img,
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) td:last-child:not(.darkrow1) img {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.7;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) .nopad {
+  padding: 0;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) th:last-child a {
+  margin-left: 0.5rem;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr:nth-child(1) th {
+  padding: 0.5rem !important;
+  font-size: 0.875rem;
+  text-align: left !important;
+  font-weight: normal;
+  line-height: 1.25em;
+  color: #969696;
+  border-bottom: 1px solid #424242;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) .darkrow1 {
+  padding: 1rem;
+  border-bottom: 1px solid #424242;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) .darkrow1 b {
+  font-size: 1.25rem;
+  font-weight: normal;
+  color: #c0c0c0;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td,
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] th {
+  padding: 0.75rem 0.5rem;
+  line-height: 1.25;
+  border-bottom: 1px solid #424242;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td span,
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] th span,
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td a,
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] th a {
+  font-size: 0.9375rem;
+  color: #969696;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td a[href*="showuser"],
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] th a[href*="showuser"] {
+  font-weight: bold;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td .lastaction,
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] th .lastaction {
+  font-size: 0.875rem;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td .lastaction a[href*="getlastpost"],
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] th .lastaction a[href*="getlastpost"] {
+  font-size: 0.875rem;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid]:last-child td {
+  border: none;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(1) {
+  /* иконка списка */
+  min-width: 1.5rem !important;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(1) img {
+  width: 1rem;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) {
+  /* название темы, пагинация и описание */
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) a[href*="view=getnewpost"] {
+  position: relative;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-bottom: -0.125rem;
+  border-radius: 100%;
+  background: #adf;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) a[href*="view=getnewpost"] img {
+  display: none;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) a[href*="view=getnewpost"]:before {
+  position: absolute;
+  display: inline-block;
+  box-sizing: border-box;
+  content: '';
+  top: 0.25rem;
+  left: 0.1875rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-top: 0.1875rem solid #2d2d2d;
+  border-left: 0.1875rem solid #2d2d2d;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) span a[title*="Тема создана"] {
+  font-size: 1rem;
+  color: white;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) a[onclick*="PopUp"] {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  line-height: 1rem;
+  vertical-align: middle;
+  background: url('src/attach.svg') no-repeat center;
+  background-size: 1.25rem;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) a[onclick*="PopUp"] img {
+  display: none;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) span:not(.minipagelink, minipagelinklast) {
+  display: inline-block;
+  margin: 0;
+  font-size: 1rem;
+  padding: 0 !important;
+  border: none;
+  background: none;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) a[title="Переход по страницам"] img {
+  display: inline-block;
+  width: 1rem;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .minipagelink,
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .minipagelinklast {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  border: none;
+  background: none;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .minipagelink a,
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .minipagelinklast a {
+  padding: 0 0.25rem;
+  font-size: 0.875rem;
+  color: #969696;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .minipagelinklast {
+  position: relative;
+  margin-left: 1rem;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .minipagelinklast a:after {
+  content: '>>';
+  position: absolute;
+  display: inline-block;
+  left: -0.5rem;
+  width: 1.25rem;
+  height: 1rem;
+  background: #2d2d2d;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .desc {
+  margin: 0.25rem 0 0;
+  padding: 0;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .desc > span:empty {
+  display: none;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .desc span,
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .desc a {
+  font-size: 0.875rem;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .desc br {
+  display: none;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .desc span:not(.forumdesc) {
+  color: #969696;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .desc .forumdesc {
+  display: block;
+  margin: 0;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .desc .forumdesc a {
+  color: #adf;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .desc .forumdesc i {
+  color: #969696;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) .desc .forumdesc b {
+  display: block;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td a[id*="fav-subscribe"] {
+  padding: 0 1.5rem 0 0;
+  background: url(src/down.png) no-repeat right;
+  background-size: 1.5rem;
+}
+#ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td img[title="Открыть меню"] {
+  display: none;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] {
+  margin: 0.5rem 0;
+  border-radius: 2px;
+  background-clip: padding-box;
+  color: white;
+  background: #2d2d2d;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);;
+  -ms-box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);;
+  -o-box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);;
+  /* Информация о пользователе */
+  /* футер поста */
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr,
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] td {
+  border: none;
+  background: none !important;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(1) {
+  /* Ник и меню пользователя */
+  /* дата и ссылка на сообщение */
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(1) td {
+  min-width: 13rem !important;
+  padding: 0;
+  color: #969696;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(1) td:nth-child(1) .popmenubutton-new,
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(1) td:nth-child(1) .popmenubutton-new-out {
+  margin: auto;
+  padding: 0;
+  border: none;
+  background: none;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(1) td:nth-child(1) .popmenubutton-new .normalname,
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(1) td:nth-child(1) .popmenubutton-new-out .normalname {
+  display: inline-block;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(1) td:nth-child(1) .popmenubutton-new .normalname a,
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(1) td:nth-child(1) .popmenubutton-new-out .normalname a {
+  display: inline-block;
+  text-align: center;
+  margin: 0.25rem 0 0;
+  padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+  font-size: 1.125rem;
+  color: white;
+  background: url(src/down.png) no-repeat right;
+  background-size: 1.5rem;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(1) td:nth-child(2) {
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(1) td:nth-child(2) img {
+  display: none;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(1) td:nth-child(2) div a {
+  padding: 0.5rem 0;
+  font-size: 0.75rem;
+  color: #adf;
+  font-weight: bold;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) {
+  /* Тело поста */
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center {
+  position: relative;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #969696;
+  /* модель устройства */
+  /* предупреждения */
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center:before {
+  content: '';
+  display: inline-block;
+  border-radius: 4rem;
+  background-clip: padding-box;
+  width: 4rem;
+  height: 4rem;
+  font-size: 1rem;
+  line-height: 4rem;
+  font-weight: bold;
+  background: #424242 url(src/person.svg) center no-repeat;
+  background-size: 3em;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center .user-avatar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  margin: auto;
+  border-radius: 2px;
+  overflow: hidden !important;
+  border-radius: 4rem;
+  background-clip: padding-box;
+  width: 4rem;
+  height: 4rem;
+  background: #2d2d2d;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center .user-avatar img {
+  display: inline-block;
+  max-width: 4rem;
+  max-height: 4rem;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center .mem-title {
+  margin: auto;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center IMG[alt="*"] {
+  display: inline-block;
+  border-radius: 1px;
+  background-clip: padding-box;
+  margin: 0 1px 0 0;
+  height: 0;
+  width: 0;
+  border: 0.25rem solid #6c8596;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center IMG[alt="*"]:last-child {
+  margin: 0;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center font {
+  display: inline-block;
+  position: absolute;
+  top: 2.75rem;
+  border-radius: 0.75rem;
+  background-clip: padding-box;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-left: 1.125rem;
+  overflow: hidden;
+  color: transparent;
+  border: 0.125rem solid #2d2d2d;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center font[color="green"] {
+  background: #259b24;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center font[color="red"] {
+  background: #ff5722;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center font + br {
+  display: none;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center a[href*="/devdb/"] {
+  color: #969696;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center a[href*="javascript:PopUp"] {
+  color: #969696;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center img[alt="-----"] {
+  display: none;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center > b {
+  position: relative;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center > b a span {
+  color: #ababab;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center > b:after,
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center > b:before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  font-weight: bold;
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.7;
+  border-radius: 2px;
+  background-clip: padding-box;
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  -o-pointer-events: none;
+  pointer-events: none;
+  color: #2d2d2d;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center > b:before {
+  left: -1.375rem;
+  content: '–';
+  background: #ff5722;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center > b:after {
+  right: -1.375rem;
+  content: '+';
+  background: #259b24;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center img[alt="-"],
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center img[alt="+"] {
+  display: inline-block;
+  opacity: 0;
+  width: 1rem;
+  height: 1rem;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor {
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: white;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor table[id*="ipb-attach"] * {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor table[id*="ipb-attach"] * .attach {
+  margin-bottom: 0.2rem;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor img[src*="folder_mime_types"],
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor img[alt="Прикрепленный файл"] {
+  display: none;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor a {
+  color: #adf;
+  text-decoration: none;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor a[data-rel="lyteframe"],
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor a.sp_img {
+  display: inline-block;
+  margin: 0.25rem 0;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor a[data-rel="lyteframe"]:before,
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor a.sp_img:before {
+  display: inline-block;
+  content: '';
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  vertical-align: center;
+  background: url('src/attach.svg') center no-repeat;
+  background-size: 1.5em;
+  margin-right: 0.3rem;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor font {
+  font-size: 0.875rem !important;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor font > * {
+  opacity: 0.7 !important;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor font * {
+  font-size: inherit;
+  color: #c0c0c0;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor font a[title="Перейти к сообщению"] {
+  font-size: 0.625rem;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor font a[title="Ссылка"] {
+  color: #adf;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor .edit {
+  display: block;
+  font-size: 0.875rem !important;
+  font-style: italic;
+  color: #969696;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor .post-edit-reason {
+  display: inline-block;
+  font-size: 0.9375rem;
+  margin-top: 0.3rem;
+  font-weight: bold;
+  color: #969696;
+  text-align: left;
+  border: none;
+  background: none;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor span[style="font-family:monospace"] {
+  font-family: 'roboto mono', monospace !important;
+  font-size: 1rem;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor .post-block.code > .block-body:before {
+  content: '';
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .postcolor .desc {
+  margin-left: 0.5rem;
+  font-size: 0.9375rem;
+  color: #969696;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) a[title="Перейти к сообщению"] {
+  position: relative;
+  display: inline-block;
+  margin: 0 -0.1875rem 0 0;
+  top: 0.375rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) a[title="Перейти к сообщению"] img {
+  display: none;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) a[title="Перейти к сообщению"]:before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  background: #adf;
+  overflow: visible;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) a[title="Перейти к сообщению"]:after {
+  position: absolute;
+  display: inline-block;
+  box-sizing: border-box;
+  content: '';
+  top: 0.490625rem;
+  left: 0.5625rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-top: 0.1875rem solid #2d2d2d;
+  border-left: 0.1875rem solid #2d2d2d;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) > div {
+  color: transparent;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) > div > br {
+  display: none;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) td:nth-child(2) .signature {
+  opacity: 0.75;
+  margin: 0 0.5rem;
+  padding: 0.5rem 0;
+  font-size: 0.75rem;
+  border-top: 1px solid #424242;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(3) td div > span {
+  margin-top: 0.125rem !important;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(3) td div > span a,
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(3) td div > a:before {
+  padding: 0.25rem;
+  margin: 0 0.25rem;
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #969696;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(3) td div > a img {
+  display: none;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(3) td:nth-child(1) div A[href*="devfaq"] {
+  margin-top: -0.1875rem;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(3) td:nth-child(1) div A[href="javascript:scroll(0,0);"]:before {
+  content: 'Вверх';
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(3) td:nth-child(1) div A[href*="report"]:before {
+  content: 'Жалоба';
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(3) td:nth-child(2) DIV[style="float: left;"] a[href*="javascript:ins"]:before {
+  content: 'Ник';
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(3) td:nth-child(2) DIV[style="float: left;"] a[href="javascript:pasteQ();"]:before {
+  content: 'Цитировать';
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(3) td:nth-child(2) DIV[id*="ka_"] {
+  color: #969696;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(3) td:nth-child(2) DIV[id*="ka_"] span {
+  margin: 0 0.25rem;
+  display: inline-block;
+  font-size: 0.875rem;
+  color: #969696 !important;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(3) td:nth-child(2) DIV[id*="ka_"] A[onclick*=",-1);"]:before {
+  content: 'Плохо';
+  opacity: 0.7;
+  color: #ff5722;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(3) td:nth-child(2) DIV[id*="ka_"] A[onclick*=",1);"]:before {
+  content: 'Хорошо';
+  opacity: 0.7;
+  color: #259b24;
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(3) td:nth-child(2) DIV[align="right"] a[id*="edit"]:before {
+  content: 'Изменить';
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(3) td:nth-child(2) DIV[align="right"] A[title="Удалить пост"]:before {
+  content: 'Удалить';
+}
+#ipbwrapper > .borderwrap TABLE.ipbtable[data-post] td.catend {
+  display: none;
+}
+#ipbwrapper > .borderwrap .barc {
+  border: none;
+  background: none;
+}
+#ipbwrapper > .borderwrap .barc DIV[style*="float: right"] a {
+  font-size: 0.9375rem;
+  color: #969696;
+}
+#ipbwrapper > .borderwrap .formsubtitle {
+  margin: 1rem 0.5rem 0;
+  padding: 0 !important;
+  font-style: italic;
+  color: #969696;
+  background: none;
+}
+#ipbwrapper > .borderwrap .formsubtitle + DIV.row1 {
+  font-style: italic;
+  color: #969696;
+  background: none;
+}
+#ipbwrapper .activeusers {
+  border: none;
+}
+#ipbwrapper .activeusers .row2 {
+  background: #1e1e1e;
+}
+#ipbwrapper .activeusers .row2 .desc {
+  font-size: 0.9375rem;
+  color: #c0c0c0;
+}
+#ipbwrapper .activeusers .row2 form {
+  font-size: 0.9375rem;
+  color: #c0c0c0;
+}
+#ipbwrapper .activeusers .row2 form select {
+  padding: 0 1.5rem 0 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #c0c0c0;
+  border: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background: url(src/down.png) no-repeat right;
+  background-size: 1.5rem;
+}
+#ipbwrapper .activeusers .row2 form input[type="submit"] {
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  color: #969696;
+  font-weight: bold;
+  border: none;
+  background: none;
+}
+#ipbwrapper #gfooter {
+  padding: 0 0.5rem;
+  background: none;
+}
+#ipbwrapper #gfooter tbody {
+  display: table-block;
+  border-radius: 2px;
+  background-clip: padding-box;
+  background: rgba(158, 158, 158, 0.3);
+}
+#ipbwrapper #gfooter tbody TD[width="25%"] {
+  padding: 0 0.75rem !important;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+#ipbwrapper #gfooter tbody a {
+  padding: 0 0.5rem !important;
+  font-size: 1rem;
+}
+#ipbwrapper .copyright {
+  font-size: 0.75rem;
+  color: #969696;
+  background: transparent;
+}
+#ipbwrapper .copyright a {
+  color: #969696;
+  font-weight: bold;
+}
+#ipbwrapper .social-icons a:before {
+  color: #adf;
+}
+#ipbwrapper a[href*='http://www.liveinternet.ru/'] {
+  display: none;
+}
+
