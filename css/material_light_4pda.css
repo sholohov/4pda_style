@@ -3,6 +3,10 @@
  * Стиль для сайта 4PDA.RU
  * Автор: Морфий
 */
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
+
 HTML {
   font-size: 1rem;
   margin: 0;
@@ -15,7 +19,6 @@ HTML body {
   padding: 0;
   font-size: 1em;
   overflow-wrap: break-word;
-  word-break: break-word;
   white-space: normal;
   color: black;
   -webkit-box-sizing: border-box;
@@ -485,7 +488,7 @@ span[style*="font-size:8pt"] * {
   margin-left: -5rem;
   padding: 0.5rem 0.75rem 0.5rem 2.5rem;
   font-weight: bold;
-  background: url('src/person.svg') no-repeat left;
+  background: url('https://sholohov.github.io/4pda_style/src/person.svg') no-repeat left;
   background-size: 1.5rem;
 }
 #ipbwrapper .user_home > a {
@@ -539,7 +542,7 @@ span[style*="font-size:8pt"] * {
   outline: none;
   border: none;
   background: none;
-  background-image: url('src/down_white.png');
+  background-image: url('https://sholohov.github.io/4pda_style/src/down_white.svg');
   background-repeat: no-repeat;
   background-size: 1.5rem;
   background-position: right;
@@ -676,15 +679,15 @@ span[style*="font-size:8pt"] * {
 }
 #ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item a[href*="act=qms"],
 #ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item-last a[href*="act=qms"] {
-  background-image: url(src/message.svg);
+  background-image: url(https://sholohov.github.io/4pda_style/src/message.svg);
 }
 #ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item a[href*="showuser"],
 #ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item-last a[href*="showuser"] {
-  background-image: url(src/person.svg);
+  background-image: url(https://sholohov.github.io/4pda_style/src/person.svg);
 }
 #ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item a[href*="search"],
 #ipbwrapper div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) > .popupmenu-item-last .popupmenu-item-last a[href*="search"] {
-  background-image: url(src/search.svg);
+  background-image: url(https://sholohov.github.io/4pda_style/src/search.svg);
 }
 #ipbwrapper #events-wrapper {
   border-radius: 2px;
@@ -763,7 +766,7 @@ span[style*="font-size:8pt"] * {
   padding: 0.25rem 2rem 0.25rem 0.75rem;
   font-weight: bold;
   color: #808080 !important;
-  background: url('src/down.png') no-repeat right;
+  background: url('https://sholohov.github.io/4pda_style/src/down_grey.svg') no-repeat right;
   background-size: 1.5rem;
 }
 #ipbwrapper span[id*="page-jump"] img {
@@ -856,7 +859,7 @@ span[style*="font-size:8pt"] * {
   border: none;
   outline: none;
   background-color: none;
-  background: url(src/down.png) right no-repeat;
+  background: url(https://sholohov.github.io/4pda_style/src/down_grey.svg) right no-repeat;
   background-size: 1.5rem;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -958,7 +961,7 @@ span[style*="font-size:8pt"] * {
   padding: 0 2rem 0 0 !important;
   color: white;
   font-size: 1rem;
-  background-image: url('src/down_white.png');
+  background-image: url('https://sholohov.github.io/4pda_style/src/down_white.svg');
   background-repeat: no-repeat;
   background-size: 1.5rem;
   background-position: right;
@@ -1149,7 +1152,7 @@ span[style*="font-size:8pt"] * {
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
-  background: url(src/down.png) no-repeat right;
+  background: url(https://sholohov.github.io/4pda_style/src/down_grey.svg) no-repeat right;
   background-size: 1.5rem;
 }
 #ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) th,
@@ -1278,7 +1281,7 @@ span[style*="font-size:8pt"] * {
   height: 1.25rem;
   line-height: 1rem;
   vertical-align: middle;
-  background: url('src/attach.svg') no-repeat center;
+  background: url('https://sholohov.github.io/4pda_style/src/attach.svg') no-repeat center;
   background-size: 1.25rem;
 }
 #ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td:nth-child(2) a[onclick*="PopUp"] img {
@@ -1356,7 +1359,7 @@ span[style*="font-size:8pt"] * {
 }
 #ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td a[id*="fav-subscribe"] {
   padding: 0 1.5rem 0 0;
-  background: url(src/down.png) no-repeat right;
+  background: url(https://sholohov.github.io/4pda_style/src/down_grey.svg) no-repeat right;
   background-size: 1.5rem;
 }
 #ipbwrapper > .borderwrap > TABLE.ipbtable:not([data-post]) tr[data-item-fid] td img[title="Открыть меню"] {
@@ -1409,7 +1412,7 @@ span[style*="font-size:8pt"] * {
   padding: 0.5rem 1.5rem 0.5rem 0.5rem;
   font-size: 1.125rem;
   color: black;
-  background: url(src/down.png) no-repeat right;
+  background: url(https://sholohov.github.io/4pda_style/src/down_grey.svg) no-repeat right;
   background-size: 1.5rem;
 }
 #ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(1) td:nth-child(2) {
@@ -1446,7 +1449,7 @@ span[style*="font-size:8pt"] * {
   font-size: 1rem;
   line-height: 4rem;
   font-weight: bold;
-  background: #e6e6e6 url(src/person.svg) center no-repeat;
+  background: #e6e6e6 url(https://sholohov.github.io/4pda_style/src/person.svg) center no-repeat;
   background-size: 3em;
 }
 #ipbwrapper > .borderwrap TABLE.ipbtable[data-post] tr:nth-child(2) .postdetails center .user-avatar {
@@ -1794,7 +1797,7 @@ span[style*="font-size:8pt"] * {
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
-  background: url(src/down.png) no-repeat right;
+  background: url(https://sholohov.github.io/4pda_style/src/down_grey.svg) no-repeat right;
   background-size: 1.5rem;
 }
 #ipbwrapper .activeusers .row2 form input[type="submit"] {

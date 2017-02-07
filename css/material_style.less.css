@@ -21,6 +21,9 @@
 
 .color(@percent: 50%) {color: mix(@color,@bgColor,@percent);}
 
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
+
 HTML{
 	font-size: 1rem;
 	margin: 0;
@@ -32,7 +35,6 @@ HTML{
 		padding: 0;
 		font-size: 1em;
 		overflow-wrap: break-word;
-		word-break: break-word;
 		white-space: normal;
 		color: @color;
 		.pref(box-sizing, border-box);
@@ -415,7 +417,7 @@ img {
 				margin-left: -5rem;
 				padding: 0.5rem 0.75rem 0.5rem 2.5rem;
 				font-weight: bold;
-				background: url('src/person.svg') no-repeat left;
+				background: url('https://sholohov.github.io/4pda_style/src/person.svg') no-repeat left;
 				background-size: 1.5rem;
 			}
 		}
@@ -470,7 +472,7 @@ img {
 				outline: none;
 				border: none;
 				background: none;
-				background-image: url('src/down_white.svg');
+				background-image: url('https://sholohov.github.io/4pda_style/src/down_white.svg');
 				background-repeat: no-repeat;
 				background-size: 1.5rem;
 				background-position: right;
@@ -584,13 +586,13 @@ div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) {
 				background-size: 1.5rem;
 			}
 			a[href*="act=qms"] {
-				background-image: url(src/message.svg);
+				background-image: url(https://sholohov.github.io/4pda_style/src/message.svg);
 			}
 			a[href*="showuser"] {
-				background-image: url(src/person.svg);
+				background-image: url(https://sholohov.github.io/4pda_style/src/person.svg);
 			}
 			a[href*="search"] {
-				background-image: url(src/search.svg);
+				background-image: url(https://sholohov.github.io/4pda_style/src/search.svg);
 			}
 		}
 	}
@@ -677,7 +679,7 @@ div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) {
 		padding: 0.25rem 2rem 0.25rem 0.75rem;
 		font-weight: bold;
 		.color(50%) !important;
-		background: url('src/down_grey.svg') no-repeat right;
+		background: url('https://sholohov.github.io/4pda_style/src/down_grey.svg') no-repeat right;
 		background-size: 1.5rem;
 		img {
 			display: none;
@@ -758,7 +760,7 @@ div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) {
 			border: none;
 			outline: none;
 			background-color: none;
-			background: url(src/down_grey.svg) right no-repeat;
+			background: url(https://sholohov.github.io/4pda_style/src/down_grey.svg) right no-repeat;
 			background-size: 1.5rem;
 			.pref(appearance, none);
 		}
@@ -828,7 +830,7 @@ div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) {
 							padding: 0 2rem 0 0 !important;
 							color: white;
 							font-size: 1rem;
-							background-image: url('src/down_white.svg');
+							background-image: url('https://sholohov.github.io/4pda_style/src/down_white.svg');
 							background-repeat: no-repeat;
 							background-size: 1.5rem;
 							background-position: right;
@@ -1005,7 +1007,7 @@ div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) {
 				border: none;
 				background: none;
 				.pref(appearance, none);
-				background: url(src/down_grey.svg) no-repeat right;
+				background: url(https://sholohov.github.io/4pda_style/src/down_grey.svg) no-repeat right;
 				background-size: 1.5rem;
 			}
 			th, td {
@@ -1124,7 +1126,7 @@ div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) {
 						height: 1.25rem;
 						line-height: 1rem;
 						vertical-align: middle;
-						background: url('src/attach.svg') no-repeat center;
+						background: url('https://sholohov.github.io/4pda_style/src/attach.svg') no-repeat center;
 						background-size: 1.25rem;
 						img {display: none;}
 					}
@@ -1198,7 +1200,7 @@ div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) {
 				td {
 					a[id*="fav-subscribe"] {
 						padding: 0 1.5rem 0 0;
-						background: url(src/down_grey.svg) no-repeat right;
+						background: url(https://sholohov.github.io/4pda_style/src/down_grey.svg) no-repeat right;
 						background-size: 1.5rem;
 					}
 					img[title="Открыть меню"] {display: none;}
@@ -1239,7 +1241,7 @@ div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) {
 								padding: 0.5rem 1.5rem 0.5rem 0.5rem;
 								font-size: 18*@rem;
 								color: @color;
-								background: url(src/down_grey.svg) no-repeat right;
+								background: url(https://sholohov.github.io/4pda_style/src/down_grey.svg) no-repeat right;
 								background-size: 1.5rem;
 							}
 						}
@@ -1278,7 +1280,7 @@ div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) {
 							font-size: 1rem;
 							line-height: 4rem;
 							font-weight: bold;
-							background: @borderColor url(src/person.svg) center no-repeat;
+							background: @borderColor url(https://sholohov.github.io/4pda_style/src/person.svg) center no-repeat;
 							background-size: 3em;
 						}
 						.user-avatar {
@@ -1635,7 +1637,7 @@ div[class="popupmenu-new"][id*="post-member"]:not(#post-member-usercp_menu) {
 					border: none;
 					background: none;
 					.pref(appearance, none);
-					background: url(src/down_grey.svg) no-repeat right;
+					background: url(https://sholohov.github.io/4pda_style/src/down_grey.svg) no-repeat right;
 					background-size: 1.5rem;
 				}
 				input[type="submit"] {
